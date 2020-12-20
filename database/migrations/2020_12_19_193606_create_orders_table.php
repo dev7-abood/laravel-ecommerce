@@ -35,9 +35,14 @@ class CreateOrdersTable extends Migration
 
             $table->text('note')->nullable();
 
-            $table->unsignedBigInteger('card_id')->index()->nullable();
+            $table->unsignedBigInteger('card_id')->index();
             $table->foreign('card_id')->references('id')
                 ->on('cards')
+                ->cascadeOnUpdate();
+
+            $table->unsignedBigInteger('user_id')->index();
+            $table->foreign('user_id')->references('id')
+                ->on('users')
                 ->cascadeOnUpdate();
 
             $table->timestamps();

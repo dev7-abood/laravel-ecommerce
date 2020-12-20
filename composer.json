@@ -16,8 +16,10 @@
         "laravel/framework": "^8.12",
         "laravel/jetstream": "^1.6",
         "laravel/sanctum": "^2.6",
+        "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
+        "realrashid/sweet-alert": "^3.2",
         "spatie/laravel-permission": "^3.18",
         "tightenco/ziggy": "^0.9.4"
     },

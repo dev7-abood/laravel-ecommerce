@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
@@ -22,3 +22,7 @@ Route::get('/', function () {
 //})->name('dashboard');
 
 
+
+Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
+    Route::get('/', ['as' => 'landing-page', 'uses' => 'IndexController@index']);
+});

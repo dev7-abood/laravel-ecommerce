@@ -13,7 +13,7 @@ Vue.use(InertiaApp);
 Vue.use(InertiaForm);
 Vue.use(PortalVue);
 
-const app = document.getElementById('app');
+const app = document.getElementById('main');
 
 new Vue({
     render: (h) =>

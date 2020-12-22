@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landing-page;
+namespace App\View\Components\landingPage;
 
 use Illuminate\View\Component;
 
-class SliderComponent extends Component
+class StaticsComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class SliderComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.slider-component');
+        return view('components.landing-page.statics-component');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landing-page;
+namespace App\View\Components\landingPage;
 
 use Illuminate\View\Component;
 
-class ScriptComponent extends Component
+class CommonBannerComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class ScriptComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.script-component');
+        return view('components.landing-page.common-banner-one-component');
     }
 }

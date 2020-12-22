@@ -24,5 +24,14 @@ Route::get('/welcome', function () {
 
 
 Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
-    Route::get('/', ['as' => 'landing-page', 'uses' => 'IndexController@index']);
+    Route::get('/', ['as' => 'landingPage', 'uses' => 'IndexController@index']);
+});
+
+
+use App\Models\Slider;
+use Carbon\Carbon;
+
+Route::get('/test', function (){
+//    Slider::create(['link'=> 'd', 'title'=> 'dd', 'sub_title' => 'dd', 'discount' => 'ddd']);
+return    Slider::where('created_at', '>=', Carbon::now()->subMinute())->get();
 });

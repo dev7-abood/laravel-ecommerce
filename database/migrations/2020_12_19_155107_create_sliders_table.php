@@ -18,6 +18,7 @@ class CreateSlidersTable extends Migration
 
             $table->string('link');
             $table->string('title');
+            $table->string('sub_title');
             $table->string('discount');
 
             $table->timestamps();

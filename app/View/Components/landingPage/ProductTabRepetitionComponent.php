@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landing-page;
+namespace App\View\Components\landingPage;
 
 use Illuminate\View\Component;
 
-class StaicComponent extends Component
+class ProductTabRepetitionComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class StaicComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.staic-component');
+        return view('components.landing-page.product-tab-repetition-component');
     }
 }

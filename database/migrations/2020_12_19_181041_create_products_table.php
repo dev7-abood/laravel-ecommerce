@@ -25,17 +25,15 @@ class CreateProductsTable extends Migration
             $table->integer('discount');
             $table->integer('quantity');
 
+            $table->boolean('new')->default(false)->nullable();
+
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')->references('id')
                 ->on('brands')
                 ->cascadeOnUpdate();
 
-            $table->unsignedBigInteger('property_id')->index();
-            $table->foreign('property_id')->references('id')
-                ->on('product_properties')
-                ->cascadeOnUpdate();
 
-            $table->unsignedBigInteger('tax_id')->index();
+            $table->unsignedBigInteger('tax_id')->index()->nullable();
             $table->foreign('tax_id')->references('id')
                 ->on('taxes')
                 ->cascadeOnUpdate();

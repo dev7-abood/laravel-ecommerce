@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landing-page;
+namespace App\View\Components\landingPage;
 
 use Illuminate\View\Component;
 
-class BrandComponent extends Component
+class ProductTopComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class BrandComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.brand-component');
+        return view('components.landing-page.product-top-component');
     }
 }

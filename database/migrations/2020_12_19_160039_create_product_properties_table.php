@@ -19,6 +19,11 @@ class CreateProductPropertiesTable extends Migration
             $table->string('prop_name');
             $table->string('prop_type');
 
+            $table->unsignedBigInteger('p_category_id')->index()->nullable();
+            $table->foreign('p_category_id')->references('id')
+                ->on('product_categories')
+                ->cascadeOnUpdate();
+
             $table->timestamps();
         });
     }

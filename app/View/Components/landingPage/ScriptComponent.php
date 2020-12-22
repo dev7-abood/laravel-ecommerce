@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\landingPage;
 
 use Illuminate\View\Component;
 
-class HeadComponent extends Component
+class ScriptComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class HeadComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.head-component');
+        return view('components.landing-page.script-component');
     }
 }

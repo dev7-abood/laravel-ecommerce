@@ -25,16 +25,16 @@
    [ 03.1 banner CSS ]
    [ 03.2 bread-crumbs CSS ]
    [ 04. tabs-slider CSS ]
-   [ 05. product-slider CSS ]
+   [ 05. Product-slider CSS ]
    [ 06. popular-slider CSS ]
    [ 07. featured-slider CSS ]
-   [ 08. single-product-sync CSS ]
-   [ 09. single-product-sync-nav CSS ]
-   [ 09.1 single-product CSS ]
+   [ 08. Single-Product-sync CSS ]
+   [ 09. Single-Product-sync-nav CSS ]
+   [ 09.1 Single-Product CSS ]
    [ 10. blog-slider CSS ]
    [ 11. brand-slider CSS ]
    [ 12. slick arrow dots CSS ]
-   [ 13. product-tags CSS ]
+   [ 13. Product-tags CSS ]
    [ 14. counter CSS ]
    [ 15. check-box CSS ]
    [ 16. static-media CSS ]
@@ -65,7 +65,7 @@
 //functions
 @import "./base/functions";
 //base
-/**************************** 
+/****************************
 [ 01. Theme default CSS ]
 *****************************/
 @import "./base/base";
@@ -87,42 +87,42 @@
 // badge
 @import "./components/badge/badge";
 // header
-/**************************** 
+/****************************
 [ 02. header CSS ]
 *****************************/
 @import "./layout/header/header";
 //sticky
-/**************************** 
+/****************************
 [ 02.1 header sticky CSS ]
 *****************************/
 @import "./components/sticky-header/sticky-header";
 // search form
-/**************************** 
+/****************************
 [ 02.2 search-form CSS ]
 *****************************/
 @import "./components/forms/search-form/search-form";
 //cart-links
-/**************************** 
+/****************************
 [ 02.3 cart-links CSS ]
 *****************************/
 @import "./components/cart-links/cart-links";
 // offcanvas-menu-toggler
-/*********************************** 
+/***********************************
 [ 02.4 offcanvas-menu-toggler CSS ]
 ************************************/
 @import "./components/offcanvas-menu-toggler/offcanvas-menu-toggler";
 //offcanvas
-/**************************** 
+/****************************
 [ 02.5 offcanvas CSS ]
 *****************************/
 @import "./components/offcanvas/offcanvas";
 //offcanvas-cart
-/**************************** 
+/****************************
 [ 02.6 offcanvas-cart CSS ]
 *****************************/
 @import "./components/offcanvas-cart/offcanvas-cart";
 // all-ctry-menu
-/**************************** 
+/****************************
 [ 02.7 all-ctry-menu CSS ]
 *****************************/
 @import "./components/all-ctry-menu/all-ctry-menu";
@@ -131,78 +131,78 @@
 
 @import "./layout/main-content/main-content";
 
-/************************************ 
+/************************************
 
-[ 09.1 single-product CSS ]
+[ 09.1 Single-Product CSS ]
 
 *************************************/
 @import "./pages/single-product";
-/**************************** 
+/****************************
 [ 21. footer CSS ]
 *****************************/
 //footer
 @import "./layout/footer/footer";
 
-/**************************** 
+/****************************
 [ 22. scroll-up CSS ]
 *****************************/
 
 @import "./components/scroll-up/scroll-up";
 
-/**************************** 
+/****************************
 [ 23. pages ]
 *****************************/
 
-/**************************** 
+/****************************
 [ 23.1 blogPages ]
 *****************************/
 
 @import "./pages/blogPages/blog";
 
-/**************************** 
+/****************************
 [ 23.2 shopPages ]
 *****************************/
 @import "./pages/shopPages/shop";
 
-/**************************** 
+/****************************
 [ 23.3 about-us ]
 *****************************/
 
 @import "./pages/about-us";
 
-/**************************** 
+/****************************
 [ 23.4 whishlist ]
 *****************************/
 
 @import "./pages/whishlist";
 
-/**************************** 
+/****************************
 [ 23.5 contact-us ]
 *****************************/
 
 @import "./pages/contact-us";
 
-/**************************** 
+/****************************
 [ 23.6 account ]
 *****************************/
 
 @import "./pages/account";
 
-/**************************** 
+/****************************
 [ 23.7 check-out ]
 
 *****************************/
 
 @import "./pages/check-out";
 
-/**************************** 
+/****************************
 [ 23.8 compare ]
 
 *****************************/
 
 @import "./pages/compare";
 
-/**************************** 
+/****************************
 [ 23.9 map ]
 
 *****************************/

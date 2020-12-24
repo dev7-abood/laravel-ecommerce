@@ -59,7 +59,7 @@
                 </div>
             </div>
         </div>
-        <!-- product-tab-nav end -->
+        <!-- Product-tab-nav end -->
         <div class="row">
             <div class="col-12">
                 <div class="tab-content" id="pills-tabContent">
@@ -84,7 +84,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -128,7 +128,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -176,7 +176,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -220,7 +220,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -268,7 +268,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -312,7 +312,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -360,7 +360,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -404,7 +404,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -457,7 +457,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -501,7 +501,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -559,7 +559,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -603,7 +603,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -651,7 +651,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -695,7 +695,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -743,7 +743,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -787,7 +787,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -835,7 +835,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -879,7 +879,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -932,7 +932,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -976,7 +976,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -1034,7 +1034,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -1078,7 +1078,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -1126,7 +1126,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -1170,7 +1170,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -1218,7 +1218,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -1262,7 +1262,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -1310,7 +1310,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -1354,7 +1354,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">
@@ -1407,7 +1407,7 @@
                                                         alt="thumbnail"
                                                     />
                                                 </a>
-                                                <!-- product links -->
+                                                <!-- Product links -->
                                                 <ul class="actions d-flex justify-content-center">
                                                     <li>
                                                         <a class="action" href="wishlist.html">
@@ -1451,7 +1451,7 @@
                                                         </a>
                                                     </li>
                                                 </ul>
-                                                <!-- product links end-->
+                                                <!-- Product links end-->
                                             </div>
                                             <div class="media-body">
                                                 <div class="product-desc">

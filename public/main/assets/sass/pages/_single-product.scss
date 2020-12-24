@@ -1,5 +1,5 @@
 /************************
-   single-product start
+   Single-Product start
  ************************/
 
 
@@ -26,7 +26,7 @@
   }
 }
 
-// product-tab-menu single-product
+// Product-tab-menu Single-Product
 
 .product-tab-menu {
   &.single-product {
@@ -43,7 +43,7 @@
         @include max-screen(767) {
           font-size: 18px;
         }
-        
+
         @include border-radius(0px);
 
         &:hover {
@@ -302,5 +302,5 @@
 }
 
 /************************
-   single-product End
+   Single-Product End
  ************************/

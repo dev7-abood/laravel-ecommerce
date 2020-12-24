@@ -1013,7 +1013,7 @@ var utils = __webpack_require__(/*! ./../utils */ "./node_modules/axios/lib/util
  *
  * @param {Object|String} data The data to be transformed
  * @param {Array} headers The headers for the request or response
- * @param {Array|Function} fns A single function or Array of functions
+ * @param {Array|Function} fns A Single function or Array of functions
  * @returns {*} The resulting transformed data
  */
 module.exports = function transformData(data, headers, fns) {
@@ -1765,9 +1765,9 @@ function trim(str) {
  *  typeof document -> undefined
  *
  * react-native:
- *  navigator.product -> 'ReactNative'
+ *  navigator.Product -> 'ReactNative'
  * nativescript
- *  navigator.product -> 'NativeScript' or 'NS'
+ *  navigator.Product -> 'NativeScript' or 'NS'
  */
 function isStandardBrowserEnv() {
   if (typeof navigator !== 'undefined' && (navigator.product === 'ReactNative' ||
@@ -6297,7 +6297,7 @@ function cloneDeep(object) {
     /**
      * Creates a `lodash` object which wraps `value` to enable implicit method
      * chain sequences. Methods that operate on and return arrays, collections,
-     * and functions can be chained together. Methods that retrieve a single value
+     * and functions can be chained together. Methods that retrieve a Single value
      * or may return a primitive value will automatically end the chain sequence
      * and return the unwrapped value. Otherwise, the value must be unwrapped
      * with `_#value`.
@@ -9444,7 +9444,7 @@ function cloneDeep(object) {
 
     /**
      * Creates an array that is the composition of partially applied arguments,
-     * placeholders, and provided arguments into a single array of arguments.
+     * placeholders, and provided arguments into a Single array of arguments.
      *
      * @private
      * @param {Array} args The provided arguments.
@@ -12097,7 +12097,7 @@ function cloneDeep(object) {
     }
 
     /**
-     * Flattens `array` a single level deep.
+     * Flattens `array` a Single level deep.
      *
      * @static
      * @memberOf _
@@ -21233,7 +21233,7 @@ function cloneDeep(object) {
      * @category Math
      * @param {number} multiplier The first number in a multiplication.
      * @param {number} multiplicand The second number in a multiplication.
-     * @returns {number} Returns the product.
+     * @returns {number} Returns the Product.
      * @example
      *
      * _.multiply(6, 4);
@@ -40258,7 +40258,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     }
 
     function preprocessRFC2822(s) {
-        // Remove comments and folding whitespace and replace multiple-spaces with a single space
+        // Remove comments and folding whitespace and replace multiple-spaces with a Single space
         return s
             .replace(/\([^)]*\)|[\n\t]/g, ' ')
             .replace(/(\s\s+)/g, ' ')
@@ -41543,7 +41543,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
     }
 
     function calendar$1(time, formats) {
-        // Support for single parameter, formats only overload to the calendar function
+        // Support for Single parameter, formats only overload to the calendar function
         if (arguments.length === 1) {
             if (!arguments[0]) {
                 time = undefined;
@@ -49241,7 +49241,7 @@ function extend (to, _from) {
 }
 
 /**
- * Merge an Array of Objects into a single Object.
+ * Merge an Array of Objects into a Single Object.
  */
 function toObject (arr) {
   var res = {};
@@ -51178,7 +51178,7 @@ function createFnInvoker (fns, vm) {
         invokeWithErrorHandling(cloned[i], null, arguments$1, vm, "v-on handler");
       }
     } else {
-      // return handler return value for single handlers
+      // return handler return value for Single handlers
       return invokeWithErrorHandling(fns, null, arguments, vm, "v-on handler")
     }
   }
@@ -51338,7 +51338,7 @@ function checkProp (
 // two cases where extra normalization is needed:
 
 // 1. When the children contains components - because a functional component
-// may return an Array instead of a single root. In this case, just a simple
+// may return an Array instead of a Single root. In this case, just a simple
 // normalization is needed - if any child is an Array, we flatten the whole
 // thing with Array.prototype.concat. It is guaranteed to be only 1-level deep
 // because functional components already normalize their own children.
@@ -51590,7 +51590,7 @@ function normalizeScopedSlot(normalSlots, key, fn) {
   var normalized = function () {
     var res = arguments.length ? fn.apply(null, arguments) : fn({});
     res = res && typeof res === 'object' && !Array.isArray(res)
-      ? [res] // single vnode
+      ? [res] // Single vnode
       : normalizeChildren(res);
     return res && (
       res.length === 0 ||
@@ -52388,7 +52388,7 @@ function _createElement (
       );
     }
   }
-  // support single function children as default scoped slot
+  // support Single function children as default scoped slot
   if (Array.isArray(children) &&
     typeof children[0] === 'function'
   ) {
@@ -52561,7 +52561,7 @@ function renderMixin (Vue) {
     } finally {
       currentRenderingInstance = null;
     }
-    // if the returned array contains only a single node, allow it
+    // if the returned array contains only a Single node, allow it
     if (Array.isArray(vnode) && vnode.length === 1) {
       vnode = vnode[0];
     }
@@ -52570,7 +52570,7 @@ function renderMixin (Vue) {
       if (Array.isArray(vnode)) {
         warn(
           'Multiple root nodes returned from render function. Render function ' +
-          'should return a single root node.',
+          'should return a Single root node.',
           vm
         );
       }
@@ -56612,7 +56612,7 @@ function updateDOMProps (oldVnode, vnode) {
     if (key === 'textContent' || key === 'innerHTML') {
       if (vnode.children) { vnode.children.length = 0; }
       if (cur === oldProps[key]) { continue }
-      // #6601 work around Chrome version <= 55 bug where single textNode
+      // #6601 work around Chrome version <= 55 bug where Single textNode
       // replaced by innerHTML/textContent retains its parentNode property
       if (elm.childNodes.length === 1) {
         elm.removeChild(elm.childNodes[0]);
@@ -57744,7 +57744,7 @@ var Transition = {
     // warn multiple elements
     if (children.length > 1) {
       warn(
-        '<transition> can only be used on a single element. Use ' +
+        '<transition> can only be used on a Single element. Use ' +
         '<transition-group> for lists.',
         this.$parent
       );
@@ -58850,7 +58850,7 @@ function parse (
       } else if (whitespaceOption) {
         if (whitespaceOption === 'condense') {
           // in condense mode, remove the whitespace node if it contains
-          // line break, otherwise condense to a single space
+          // line break, otherwise condense to a Single space
           text = lineBreakRE.test(text) ? '' : ' ';
         } else {
           text = ' ';
@@ -58860,7 +58860,7 @@ function parse (
       }
       if (text) {
         if (!inPre && whitespaceOption === 'condense') {
-          // condense consecutive whitespaces into single space
+          // condense consecutive whitespaces into Single space
           text = text.replace(whitespaceRE$1, ' ');
         }
         var res;
@@ -60321,7 +60321,7 @@ function genChildren (
   var children = el.children;
   if (children.length) {
     var el$1 = children[0];
-    // optimize single v-for
+    // optimize Single v-for
     if (children.length === 1 &&
       el$1.for &&
       el$1.tag !== 'template' &&

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 
-class ProductTopComponent extends Component
+use App\Models\Brand;
+
+class BrandComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +25,12 @@ class ProductTopComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.product-top-component');
+        return view('components.landing-page.brand-component');
     }
+
+    public function brands()
+    {
+        return Brand::with('image')->where('is_published', true)->get();
+    }
+
 }

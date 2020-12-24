@@ -160,10 +160,10 @@
     }]
   }).slickAnimation();
   /*--------------------------
-         product slider init
+         Product slider init
         ---------------------------- */
 
-  var $productSliderInit = $(".product-slider-init");
+  var $productSliderInit = $(".Product-slider-init");
   $productSliderInit.slick({
     autoplay: false,
     autoplaySpeed: 10000,
@@ -319,10 +319,10 @@
     ]
   });
   /*--------------------------
-         product ctry slider init
+         Product ctry slider init
         ---------------------------- */
 
-  var $productCtry = $(".product-ctry-init");
+  var $productCtry = $(".Product-ctry-init");
   $productCtry.slick({
     autoplay: false,
     autoplaySpeed: 10000,
@@ -496,10 +496,10 @@
     draggable: false
   });
   /*---------------------------
-      product-syncing
+      Product-syncing
       ---------------------------- */
 
-  $(".product-sync-init").slick({
+  $(".Product-sync-init").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
@@ -507,9 +507,9 @@
     arrows: false,
     dots: false,
     fade: true,
-    asNavFor: ".product-sync-nav"
+    asNavFor: ".Product-sync-nav"
   });
-  $(".product-sync-nav").slick({
+  $(".Product-sync-nav").slick({
     dots: false,
     arrows: false,
     infinite: true,
@@ -517,7 +517,7 @@
     nextArrow: '<button class="slick-next"><i class="fas fa-arrow-right"></i></button>',
     slidesToShow: 4,
     slidesToScroll: 1,
-    asNavFor: ".product-sync-init",
+    asNavFor: ".Product-sync-init",
     focusOnSelect: true,
     draggable: false
   });
@@ -555,7 +555,7 @@
     $(".slick-slider").slick("setPosition");
   });
   /*--------------------------
-      comment  scroll down 
+      comment  scroll down
       ---------------------------- */
 
   $("#write-comment").on("click", function (e) {
@@ -564,8 +564,8 @@
       scrollTop: $(".btn-dark ").offset().top + 750
     }, 500, "linear");
   });
-  /*--------------------------     
-           counter 
+  /*--------------------------
+           counter
          -------------------------- */
 
   $(".count").each(function () {

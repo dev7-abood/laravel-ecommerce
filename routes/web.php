@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,13 +26,14 @@ Route::get('/welcome', function () {
 
 Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
     Route::get('/', ['as' => 'landingPage', 'uses' => 'IndexController@index']);
+
+    Route::group(['prefix' => 'product', 'as' => 'product.'], function (){
+        Route::get('/{slug}', ['as' => 'Single.index', 'uses' => 'ProductController@singleIndex']);
+    });
+
 });
 
+Route::get('/gg', function (){
+   return Product::with('images')->where('slug', 'j7')->first();
 
-use App\Models\Slider;
-use Carbon\Carbon;
-
-Route::get('/test', function (){
-//    Slider::create(['link'=> 'd', 'title'=> 'dd', 'sub_title' => 'dd', 'discount' => 'ddd']);
-return    Slider::where('created_at', '>=', Carbon::now()->subMinute())->get();
 });

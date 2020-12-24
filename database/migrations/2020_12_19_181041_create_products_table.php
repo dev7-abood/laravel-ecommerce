@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->text('desc');
 
 
@@ -39,6 +39,7 @@ class CreateProductsTable extends Migration
                 ->cascadeOnUpdate();
 
             $table->string('video')->nullable();
+            $table->string('image')->nullable();
 
             $table->timestamps();
         });

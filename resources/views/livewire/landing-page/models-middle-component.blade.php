@@ -31,7 +31,7 @@
                                     />
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                             <div class="single-product">
                                 <div class="product-thumb">
                                     <img
@@ -40,7 +40,7 @@
                                     />
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                             <div class="single-product">
                                 <div class="product-thumb">
                                     <img
@@ -49,7 +49,7 @@
                                     />
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                             <div class="single-product">
                                 <div class="product-thumb">
                                     <img
@@ -58,7 +58,7 @@
                                     />
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                         </div>
 
                         <div class="product-sync-nav">
@@ -71,7 +71,7 @@
                                         /></a>
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                             <div class="single-product">
                                 <div class="product-thumb">
                                     <a href="javascript:void(0)">
@@ -81,7 +81,7 @@
                                         /></a>
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                             <div class="single-product">
                                 <div class="product-thumb">
                                     <a href="javascript:void(0)"
@@ -91,7 +91,7 @@
                                         /></a>
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                             <div class="single-product">
                                 <div class="product-thumb">
                                     <a href="javascript:void(0)"
@@ -101,7 +101,7 @@
                                         /></a>
                                 </div>
                             </div>
-                            <!-- single-product end -->
+                            <!-- Single-Product end -->
                         </div>
                     </div>
                     <div class="col-lg-7">

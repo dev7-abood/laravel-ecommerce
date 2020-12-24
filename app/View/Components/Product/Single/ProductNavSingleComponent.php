@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\Product\Single;
 
 use Illuminate\View\Component;
 
-class ProductTabRepetitionComponent extends Component
+class ProductNavSingleComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class ProductTabRepetitionComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.product-tab-repetition-component');
+        return view('components.product.single.nav-product-component');
     }
 }

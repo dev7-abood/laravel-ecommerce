@@ -1,12 +1,10 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 
-use App\Models\Slider;
-
-class SliderComponent extends Component
+class FooterComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -25,13 +23,6 @@ class SliderComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.slider-component');
+        return view('components.landing-page.footer-component');
     }
-
-
-    public function sliders()
-    {
-        return Slider::with('image')->get();
-    }
-
 }

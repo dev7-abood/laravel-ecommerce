@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 

@@ -18,6 +18,7 @@
     <!-- header-middle end -->
 </header>
 <!-- header end -->
+@if(Request::is('/'))
 <!-- main slider start -->
 <x-landing-page.slider-component/>
 <!-- main slider end -->
@@ -27,27 +28,28 @@
 <!-- common banner  start -->
 <x-landing-page.common-banner-one-component/>
 <!-- common banner  end -->
-<!-- product tab start -->
+<!-- Product tab start -->
 <x-landing-page.product-top-component/>
-<!-- product tab end -->
+<!-- Product tab end -->
 <!-- common banner  start -->
 <x-landing-page.common-banner-tow-component/>
 <!-- common banner  end -->
-<!-- product tab repetition start -->
+<!-- Product tab repetition start -->
 <x-landing-page.product-tab-repetition-component/>
-<!-- product tab repetition end -->
-
+<!-- Product tab repetition end -->
 <!-- blog-section start -->
 <!-- blog-section end -->
 <!-- brand slider start -->
-
 <x-landing-page.brand-component/>
+@endif
 <!-- brand slider end -->
+@yield('container')
 <!-- footer strat -->
 <x-landing-page.footer-component/>
 <!-- footer end -->
 <livewire:landing-page.models-middle-component/>
 <x-landing-page.script-component/>
+@yield('script')
 @livewireScripts
 </body>
 </html>

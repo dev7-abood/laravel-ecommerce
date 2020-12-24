@@ -25,16 +25,16 @@
    [ 03.1 banner CSS ]
    [ 03.2 bread-crumbs CSS ]
    [ 04. tabs-slider CSS ]
-   [ 05. product-slider CSS ]
+   [ 05. Product-slider CSS ]
    [ 06. popular-slider CSS ]
    [ 07. featured-slider CSS ]
-   [ 08. single-product-sync CSS ]
-   [ 09. single-product-sync-nav CSS ]
-   [ 09.1 single-product CSS ]
+   [ 08. Single-Product-sync CSS ]
+   [ 09. Single-Product-sync-nav CSS ]
+   [ 09.1 Single-Product CSS ]
    [ 10. blog-slider CSS ]
    [ 11. brand-slider CSS ]
    [ 12. slick arrow dots CSS ]
-   [ 13. product-tags CSS ]
+   [ 13. Product-tags CSS ]
    [ 14. counter CSS ]
    [ 15. check-box CSS ]
    [ 16. static-media CSS ]
@@ -2690,7 +2690,7 @@ body.offcanvas-open {
 # Main Content start
 *------------------*/
 /********************************
-   product-tags style
+   Product-tags style
  ********************************/
 .product-size .title {
   text-transform: uppercase;
@@ -2724,7 +2724,7 @@ body.offcanvas-open {
   left: calc(100% - 85px);
 }
 
-/* product-widget  */
+/* Product-widget  */
 .product-widget .title {
   font-weight: 600;
   font-size: 18px;
@@ -2767,7 +2767,7 @@ body.offcanvas-open {
 }
 
 /********************************
-   product-tags style END
+   Product-tags style END
  ********************************/
 /* *******************
  counter style
@@ -3651,7 +3651,7 @@ breadcrumb-section
 breadcrumb-section END
  ****************************/
 /********************************
-    product tab menu style
+    Product tab menu style
  ********************************/
 .product-tab-menu .nav-item {
   margin: 0px 2px;
@@ -3678,10 +3678,10 @@ breadcrumb-section END
 }
 
 /********************************
-    product tab menu style END
+    Product tab menu style END
  ********************************/
 /********************************
-    product links style
+    Product links style
  ********************************/
 .actions {
   position: absolute;
@@ -3742,10 +3742,10 @@ breadcrumb-section END
 }
 
 /********************************
-    product links style END
+    Product links style END
  ********************************/
 /********************************
-   product-card style
+   Product-card style
  ********************************/
 .tab-content .tab-pane.active .product-list {
   -webkit-animation: zoomIn 0.5s ease;
@@ -3783,7 +3783,7 @@ img.second-img {
           box-shadow: none;
 }
 
-/* product desc style */
+/* Product desc style */
 .product-desc {
   padding: 18px;
 }
@@ -3878,10 +3878,10 @@ img.second-img {
 }
 
 /********************************
-   product-card style END
+   Product-card style END
  ********************************/
 /********************************
-    product Slider
+    Product Slider
  ********************************/
 .product-slider-init .slick-list {
   padding: 15px 0;
@@ -3902,7 +3902,7 @@ img.second-img {
 }
 
 /********************************
-    product Slider End
+    Product Slider End
  ********************************/
 /********************************
     popular Slider
@@ -3985,7 +3985,7 @@ img.second-img {
 # featured section End
 ********************************/
 /********************************
-    product-ctry-init
+    Product-ctry-init
  ********************************/
 .product-ctry-init .product-desc .title {
   font-size: 18px;
@@ -4085,7 +4085,7 @@ img.second-img {
 }
 
 /********************************
-    product-ctry-init ENd
+    Product-ctry-init ENd
  ********************************/
 /********************************
     countdown-sync-nav Slider
@@ -4670,11 +4670,11 @@ img.second-img {
 *------------------*/
 /************************************
 
-[ 09.1 single-product CSS ]
+[ 09.1 Single-Product CSS ]
 
 *************************************/
 /************************
-   single-product start
+   Single-Product start
  ************************/
 .single-product-head .title {
   font-weight: 600;
@@ -4980,7 +4980,7 @@ img.second-img {
 }
 
 /************************
-   single-product End
+   Single-Product End
  ************************/
 /****************************
 [ 21. footer CSS ]

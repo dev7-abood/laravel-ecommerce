@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 
-class BlogComponent extends Component
+class StaticsComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class BlogComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.blog-component');
+        return view('components.landing-page.statics-component');
     }
 }

@@ -1,10 +1,12 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 
-class CommonBannerTowComponent extends Component
+use App\Models\Product;
+
+class ProductTabRepetitionComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +25,12 @@ class CommonBannerTowComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.common-banner-tow-component');
+        return view('components.landing-page.product-tab-repetition-component');
     }
+
+    public function getNewProducts()
+    {
+       return Product::where('new', true)->get();
+    }
+
 }

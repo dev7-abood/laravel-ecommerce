@@ -1,10 +1,12 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 
-class ScriptComponent extends Component
+use App\Models\Slider;
+
+class SliderComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +25,13 @@ class ScriptComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.script-component');
+        return view('components.landing-page.slider-component');
     }
+
+
+    public function sliders()
+    {
+        return Slider::with('image')->get();
+    }
+
 }

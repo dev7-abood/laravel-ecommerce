@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateProductPropertiesTable extends Migration
+class CreateProductPropertyNamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,17 @@ class UpdateProductPropertiesTable extends Migration
      */
     public function up()
     {
-        Schema::table('product_properties', function (Blueprint $table) {
+        Schema::create('product_property_names', function (Blueprint $table) {
+            $table->id();
+
+            $table->string('name');
 
             $table->unsignedBigInteger('product_id')->index()->nullable();
             $table->foreign('product_id')->references('id')
                 ->on('products')
                 ->cascadeOnUpdate();
 
+            $table->timestamps();
         });
     }
 
@@ -30,8 +34,6 @@ class UpdateProductPropertiesTable extends Migration
      */
     public function down()
     {
-        Schema::table('product_properties', function (Blueprint $table) {
-            $table->dropColumn('product_id');
-        });
+        Schema::dropIfExists('product_property_names');
     }
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\landingPage;
+namespace App\View\Components\LandingPage;
 
 use Illuminate\View\Component;
 
-class FooterComponent extends Component
+class ScriptComponent extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class FooterComponent extends Component
      */
     public function render()
     {
-        return view('components.landing-page.footer-component');
+        return view('components.landing-page.script-component');
     }
 }

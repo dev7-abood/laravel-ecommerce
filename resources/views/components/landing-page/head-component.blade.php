@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="/main/assets/css/plugins/aos.css" />
     <link rel="stylesheet" href="/main/assets/css/style.min.css" />
 
+    @livewireStyles
+
     @yield('style')
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->

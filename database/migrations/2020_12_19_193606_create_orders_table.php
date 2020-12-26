@@ -22,7 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('phone');
             $table->string('email')->nullable();
 
-            $table->integer('total_price');
+            $table->decimal('total_price');
 
             $table->string('zip')->nullable();
             $table->string('location');

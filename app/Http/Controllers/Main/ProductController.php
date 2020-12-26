@@ -9,6 +9,6 @@ class ProductController extends Controller
 {
     public function singleIndex($slug)
     {
-        return view('main.product.single-index', ['slug' => $slug]);
+        return view('main.single-product.index', ['slug' => $slug]);
     }
 }

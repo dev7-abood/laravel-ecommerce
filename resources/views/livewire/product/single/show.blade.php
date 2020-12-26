@@ -7,24 +7,19 @@
                          style="border-radius: 2px">
                 </div>
 
-                <div class="image-select">
-                    <div class="responsive">
-                        <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>
-                        <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+                <div class="image-select responsive">
                         <div class="col-2 my-2 mx-2" style="width: 180px">
                             <img onclick="changMinImage(this)" class="img-fluid product-image" src="{{$product->image}}"
-                                 alt="" style="border-radius: 2px;cursor: pointer">
+                                 alt="" style="border-radius: 2px;cursor: pointer" height="250">
                         </div>
 
                         @foreach($product->images as $img)
                             <div class="col-2 my-2 mx-2" style="width: 200px">
-                                <img class="img-fluid product-image" height="150" src="{{$img->url}}" alt=""
+                                <img class="img-fluid product-image" height="250" src="{{$img->url}}" alt=""
                                      style="border-radius: 2px;cursor: pointer"
                                      onclick="changMinImage(this)">
                             </div>
                         @endforeach
-
-                    </div>
                 </div>
 
             </div>
@@ -32,7 +27,7 @@
 
                 <div class="single-product-info">
                     <div class="single-product-head">
-                        <h2 class="title mb-20">Originals Windbreaker Winter Face Cream</h2>
+                        <h2 class="title mb-20">{{$product->name}}</h2>
                         <div class="star-content mb-20">
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
@@ -51,21 +46,7 @@
                 <span class="onsale">$21.51</span></span>
                             <span class="badge position-static bg-dark rounded-0">Save 10%</span>
                         </div>
-                        <p>
-                            Block out the haters with the fresh adidas® Originals Kaval
-                            Windbreaker Face Cream.
-                        </p>
-                        <ul>
-                            <li>Part of the Kaval Collection.</li>
-                            <li>
-                                Regular fit is eased, but not sloppy, and perfect for any
-                                activity.
-                            </li>
-                            <li>
-                                Plain-woven Face Cream specifically constructed for freedom of
-                                movement.
-                            </li>
-                        </ul>
+                       {!! $product->desc !!}
                     </div>
                     <div class="product-footer">
                         <div class="d-flex justify-content-around">
@@ -139,32 +120,44 @@
             </div>
             </div>
     </div>
+
 </section>
+
 
 @section('script')
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
+
 
         $('.responsive').slick({
             infinite: true,
             slidesToShow: 3,
             slidesToScroll: 3,
             arrows: true,
+            prevArrow: `<button id="prevArrowEdit" style="width: 100%;background-color: #b4a3ef;color: white;border-radius: 4px" ><i style="font-size: 20px" class="fas fa-arrows-alt-h"></i></button>`,
+            nextArrow: `<button hidden></button>`
         });
+
+
         function changMinImage(e) {
-            // product = document.querySelector('.product-image')
-            // for (let i = 0; i < product.length; i++) {
-            //     console.log('fakeImage: ', product[i]);
+            // single-product = document.querySelector('.single-product-image')
+            // for (let i = 0; i < single-product.length; i++) {
+            //     console.log('fakeImage: ', single-product[i]);
             // }
             let getSlideImage = e.src
             document.getElementById('main-img').setAttribute('src', getSlideImage)
         }
+
+        document.getElementById('prevArrowEdit').classList.remove("slick-arrow");
+        // document.getElementById('prevArrowEdit').classList.remove("slick-arrow");
+
     </script>
 @endsection
 
 @section('style')
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <style>
+        #prevArrowEdit:hover{
+            background-color: #1b1e21;
+        }
     </style>
 @endsection
-

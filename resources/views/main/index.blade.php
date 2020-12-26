@@ -35,7 +35,7 @@
 <x-landing-page.common-banner-tow-component/>
 <!-- common banner  end -->
 <!-- Product tab repetition start -->
-<x-landing-page.product-tab-repetition-component/>
+{{--<x-landing-page.single-product-tab-repetition-component/>--}}
 <!-- Product tab repetition end -->
 <!-- blog-section start -->
 <!-- blog-section end -->

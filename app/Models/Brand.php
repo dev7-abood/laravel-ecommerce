@@ -11,10 +11,14 @@ class Brand extends Model
 
     protected $guarded = [];
 
-
     public function image()
     {
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function products()
+    {
+        $this->hasMany(Product::class);
     }
 
 }

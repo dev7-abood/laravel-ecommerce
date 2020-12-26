@@ -17,4 +17,16 @@ class Product extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
+    public function productCategories()
+    {
+        return $this->belongsTo(ProductCategory::class,'p_category_id');
+    }
+
+
+    public function brands()
+    {
+        return $this->belongsTo(Brand::class);
+    }
+
+
 }

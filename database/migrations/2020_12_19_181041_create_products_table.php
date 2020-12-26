@@ -21,17 +21,23 @@ class CreateProductsTable extends Migration
             $table->text('desc');
 
 
-            $table->integer('price');
+            $table->decimal('price');
             $table->integer('discount');
             $table->integer('quantity');
 
             $table->boolean('new')->default(false)->nullable();
+
 
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')->references('id')
                 ->on('brands')
                 ->cascadeOnUpdate();
 
+
+            $table->unsignedBigInteger('p_category_id')->index();
+            $table->foreign('p_category_id')->references('id')
+                ->on('product_categories')
+                ->cascadeOnUpdate();
 
             $table->unsignedBigInteger('tax_id')->index()->nullable();
             $table->foreign('tax_id')->references('id')

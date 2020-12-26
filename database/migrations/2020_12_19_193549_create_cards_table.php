@@ -21,7 +21,7 @@ class CreateCardsTable extends Migration
             $table->integer('quantity');
             $table->integer('tax_val');
             $table->integer('dis_percent');
-            $table->integer('price'); // After discount
+            $table->decimal('price'); // After discount
             $table->boolean('is_show')->default(true);
 
 //            $table->integer('main_price');

@@ -3,100 +3,13 @@
         <div class="row align-items-center">
             <div class="col-6 col-lg-2 col-xl-2">
                 <div class="logo">
-                    <a href="index.html"
+                    <a href="/"
                     ><img src="assets/img/logo/logo.png" alt="logo"
                         /></a>
                 </div>
             </div>
             <div class="col-xl-8 col-lg-7 d-none d-lg-block">
                 <ul class="main-menu d-flex justify-content-center">
-                    <li class="active ml-0">
-                        <a href="index.html" class="pl-0"
-                        >Home <i class="ion-ios-arrow-down"></i
-                            ></a>
-                        <ul class="sub-menu">
-                            <li><a href="index.html">Home 1</a></li>
-                            <li><a href="index-2.html">Home 2</a></li>
-                        </ul>
-                    </li>
-                    <li class="position-static">
-                        <a href="shop-grid-3-column.html"
-                        >Shop <i class="ion-ios-arrow-down"></i
-                            ></a>
-                        <ul class="mega-menu row">
-                            <li class="col-3">
-                                <ul>
-                                    <li class="mega-menu-title"><a href="#">Shop Grid</a></li>
-                                    <li>
-                                        <a href="shop-grid-3-column.html">Shop Grid 3 Column</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-4-column.html">Shop Grid 4 Column</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-left-sidebar.html"
-                                        >Shop Grid Left Sidebar</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-right-sidebar.html"
-                                        >Shop Grid Right Sidebar</a
-                                        >
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="col-3">
-                                <ul>
-                                    <li class="mega-menu-title"><a href="#">Shop List</a></li>
-                                    <li><a href="shop-grid-list.html">Shop List</a></li>
-                                    <li>
-                                        <a href="shop-grid-list-left-sidebar.html"
-                                        >Shop List Left Sidebar</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="shop-grid-list-right-sidebar.html"
-                                        >Shop List Right Sidebar</a
-                                        >
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="col-3">
-                                <ul>
-                                    <li class="mega-menu-title"><a href="#">Shop Single</a></li>
-                                    <li><a href="single-product.html">Shop Single</a></li>
-                                    <li>
-                                        <a href="single-product-configurable.html"
-                                        >Shop Variable</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="single-product-affiliate.html">Shop Affiliate</a>
-                                    </li>
-                                    <li><a href="single-product-group.html">Shop Group</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-3">
-                                <ul>
-                                    <li class="mega-menu-title"><a href="#">other pages</a></li>
-                                    <li><a href="about-us.html">About Page</a></li>
-                                    <li><a href="cart.html">Cart Page</a></li>
-                                    <li><a href="checkout.html">Checkout Page</a></li>
-                                    <li><a href="compare.html">Compare Page</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-6 mt-4">
-                                <a href="single-product.html" class="zoom-in overflow-hidden"
-                                ><img src="assets/img/mega-menu/1.jpg" alt="img"
-                                    /></a>
-                            </li>
-                            <li class="col-6 mt-4">
-                                <a href="single-product.html" class="zoom-in overflow-hidden"
-                                ><img src="assets/img/mega-menu/2.jpg" alt="img"
-                                    /></a>
-                            </li>
-                        </ul>
-                    </li>
                     <li>
                         <a href="#">Pages <i class="ion-ios-arrow-down"></i></a>
                         <ul class="sub-menu">
@@ -169,6 +82,7 @@
                         </ul>
                     </li>
                     <li><a href="contact.html">contact Us</a></li>
+                    <li><a href="{{route('main.categories.index')}}">Categories</a></li>
                 </ul>
             </div>
             <div class="col-6 col-lg-3 col-xl-2">

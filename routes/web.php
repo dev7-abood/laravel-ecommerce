@@ -13,34 +13,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
 //Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //    return Inertia\Inertia::render('Dashboard');
 //})->name('dashboard');
 
-
+Route::get('/welcome', function () {
+    return view('welcome');
+});
 
 Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
     Route::get('/', ['as' => 'landingPage', 'uses' => 'IndexController@index']);
 
-    Route::group(['prefix' => 'product', 'as' => 'product.'], function (){
-        Route::get('/{slug}', ['as' => 'Single.index', 'uses' => 'ProductController@singleIndex']);
+    Route::group(['prefix' => 'product/categories', 'as' => 'categories.'], function (){
+        Route::get('/', ['as' => 'index', 'uses' => 'ProductCategory@index']);
     });
+
+    Route::group(['prefix' => 'products', 'as' => 'products.'], function (){
+        Route::get('/{slug}', ['as' => 'show', 'uses' => 'ProductsController@show']);
+    });
+
+    Route::group(['prefix' => 'qr/product', 'as' => 'product.'], function (){
+        Route::get('/{catSlug}/{slug}', ['as' => 'Single.index', 'uses' => 'ProductController@show']);
+    });
+
 });
 
-Route::group(['prefix' => '/qr/product/categories', 'as' => 'categories.', 'namespace' => 'Main'], function (){
-    Route::get('/', ['as' => 'index', 'uses' => 'ProductCategory@index']);
+
+use App\Models\ProductCategory;
+Route::get('test', function (){
+
+    ProductCategory::where('slug', 'phone')->first();
+    ProductCategory::where('slug', 'phone')->first()->products()->paginate(2);
+
+
+
 });
-
-
-
-
-//
-//use App\Models\ProductCategory;
-//use App\Models\Product;
-//Route::get('/gg', function (){
-//    return ProductCategory::with('products')->where('name', 'fff')->first();
-//});

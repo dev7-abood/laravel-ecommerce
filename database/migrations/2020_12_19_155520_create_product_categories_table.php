@@ -17,7 +17,13 @@ class CreateProductCategoriesTable extends Migration
             $table->id();
 
             $table->string('name')->unique();
+            $table->string('slug')->unique();
+
+            $table->string('title')->nullable();
+
             $table->boolean('is_published')->default(false);
+            $table->string('image');
+
 
             $table->timestamps();
         });

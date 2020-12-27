@@ -20,6 +20,7 @@ class CreateSlidersTable extends Migration
             $table->string('title');
             $table->string('sub_title');
             $table->string('discount');
+            $table->string('image');
 
             $table->timestamps();
         });

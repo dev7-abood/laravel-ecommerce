@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function singleIndex($slug)
+    public function show($catSlug, $slug)
     {
-        return view('main.single-product.index', ['slug' => $slug]);
+        return view('main.single-product.index', ['catSlug' => $catSlug, 'slug' => $slug]);
     }
 }

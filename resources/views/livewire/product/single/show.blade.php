@@ -115,11 +115,9 @@
                         </div>
                     </div>
                 </div>
-
-
-            </div>
             </div>
     </div>
+</div>
 
 </section>
 
@@ -127,8 +125,6 @@
 @section('script')
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
-
-
         $('.responsive').slick({
             infinite: true,
             slidesToShow: 3,
@@ -137,8 +133,6 @@
             prevArrow: `<button id="prevArrowEdit" style="width: 100%;background-color: #b4a3ef;color: white;border-radius: 4px" ><i style="font-size: 20px" class="fas fa-arrows-alt-h"></i></button>`,
             nextArrow: `<button hidden></button>`
         });
-
-
         function changMinImage(e) {
             // single-product = document.querySelector('.single-product-image')
             // for (let i = 0; i < single-product.length; i++) {
@@ -147,13 +141,10 @@
             let getSlideImage = e.src
             document.getElementById('main-img').setAttribute('src', getSlideImage)
         }
-
         document.getElementById('prevArrowEdit').classList.remove("slick-arrow");
         // document.getElementById('prevArrowEdit').classList.remove("slick-arrow");
-
     </script>
 @endsection
-
 @section('style')
     <style>
         #prevArrowEdit:hover{

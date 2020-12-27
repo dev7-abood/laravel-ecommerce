@@ -16,16 +16,16 @@
      ***************************************************-->
     <!-- cdn links -->
 
-    <link rel="stylesheet" href="/main/assets/css/fontawesome.min.css" />
-    <link rel="stylesheet" href="/main/assets/css/ionicons.min.css" />
-    <link rel="stylesheet" href="/main/assets/css/simple-line-icons.css" />
+    <link rel="stylesheet" href="/main/assets/css/fontawesome.min.css" data-turbolinks-track="reload"/>
+    <link rel="stylesheet" href="/main/assets/css/ionicons.min.css"  data-turbolinks-track="reload"/>
+    <link rel="stylesheet" href="/main/assets/css/simple-line-icons.css"  data-turbolinks-track="reload"/>
 
-    <link rel="stylesheet" href="/main/assets/css/plugins/jquery-ui.min.css">
-    <link rel="stylesheet" href="/main/assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/main/assets/css/plugins/jquery-ui.min.css" data-turbolinks-track="reload"/>
+    <link rel="stylesheet" href="/main/assets/css/bootstrap.min.css" data-turbolinks-track="reload"/>
 
-    <link rel="stylesheet" href="/main/assets/css/plugins/plugins.css" />
-    <link rel="stylesheet" href="/main/assets/css/plugins/aos.css" />
-    <link rel="stylesheet" href="/main/assets/css/style.min.css" />
+    <link rel="stylesheet" href="/main/assets/css/plugins/plugins.css" data-turbolinks-track="reload"/>
+    <link rel="stylesheet" href="/main/assets/css/plugins/aos.css"  data-turbolinks-track="reload"/>
+    <link rel="stylesheet" href="/main/assets/css/style.min.css" data-turbolinks-track="reload"/>
 
     @livewireStyles
 

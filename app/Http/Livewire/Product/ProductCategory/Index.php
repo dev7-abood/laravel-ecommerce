@@ -3,9 +3,7 @@
 namespace App\Http\Livewire\Product\ProductCategory;
 
 use Livewire\Component;
-
 use Livewire\WithPagination;
-
 use App\Models\ProductCategory;
 
 class Index extends Component
@@ -17,8 +15,8 @@ class Index extends Component
 
     public function render()
     {
-       $productCategory =  ProductCategory::paginate(1);
 
-        return view('livewire.product.product-category.index',['productCategory' => $productCategory]);
+       $productCategory =  ProductCategory::where('is_published', true)->paginate(2);
+       return view('livewire.product.product-category.index',['productCategory' => $productCategory]);
     }
 }

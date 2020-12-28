@@ -11,16 +11,16 @@
 {{--                    </p>--}}
 {{--                </div>--}}
 {{--                <!-- section-title end -->--}}
-{{--                <div class="single-product-slider-init theme1 slick-nav">--}}
+{{--                <div class="single-product-product-slider-init theme1 slick-nav">--}}
 
 {{--                    @foreach($getNewProducts as $item)--}}
 {{--                    <div class="slider-item">--}}
-{{--                        <div class="card single-product-card">--}}
+{{--                        <div class="card single-product-product-card">--}}
 {{--                            <div class="card-body p-0">--}}
 {{--                                <div class="media flex-column">--}}
-{{--                                    <div class="single-product-thumbnail position-relative">--}}
+{{--                                    <div class="single-product-product-thumbnail position-relative">--}}
 {{--                                        <span class="badge badge-danger top-right">New</span>--}}
-{{--                                        <a href="single-single-product.html">--}}
+{{--                                        <a href="single-product-single-product-product.html">--}}
 {{--                                            <img--}}
 {{--                                                class="first-img"--}}
 {{--                                                src="{{$item->image}}"--}}
@@ -74,7 +74,7 @@
 {{--                                        <!-- Product links end-->--}}
 {{--                                    </div>--}}
 {{--                                    <div class="media-body">--}}
-{{--                                        <div class="single-product-desc">--}}
+{{--                                        <div class="single-product-product-desc">--}}
 {{--                                            <h3 class="title">--}}
 {{--                                                <a href="shop-grid-4-column.html"--}}
 {{--                                                >{{$item->name}}</a--}}
@@ -90,7 +90,7 @@
 {{--                                            <div--}}
 {{--                                                class="d-flex align-items-center justify-content-between"--}}
 {{--                                            >--}}
-{{--                                                <span class="single-product-price">${{$item->price}}</span>--}}
+{{--                                                <span class="single-product-product-price">${{$item->price}}</span>--}}
 {{--                                                <button--}}
 {{--                                                    class="pro-btn"--}}
 {{--                                                    data-toggle="modal"--}}

@@ -23,6 +23,6 @@ class ProductNavSingleComponent extends Component
      */
     public function render()
     {
-        return view('components.product.single.nav-product-component');
+        return view('components.product.single-product.nav-product-component');
     }
 }

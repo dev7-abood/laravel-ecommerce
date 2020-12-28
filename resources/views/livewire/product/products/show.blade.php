@@ -33,84 +33,83 @@
                 </div>
             </div>
         </div>
-        <!-- product-tab-nav end -->
         <div class="tab-content" id="pills-tabContent">
-            <!-- first tab-pane -->
             <div
                 class="tab-pane fade show active"
                 id="pills-home"
                 role="tabpanel"
-                aria-labelledby="pills-home-tab"
-            >
+                aria-labelledby="pills-home-tab">
                 <div class="row grid-view theme1">
-
                     @foreach($products as $product)
-                    <div class="col-sm-6 col-md-4 mb-30">
-                        <div class="card product-card">
-                            <div class="card-body">
-                                <div class="product-thumbnail position-relative">
-                                    <span class="badge badge-danger top-right">New</span>
-                                    <a href="{{route('main.product.Single.index', ['catSlug' => $productCat->slug, 'slug' => $product->slug]) }}">
-                                        <img
-                                            class="first-img"
-                                            src="{{asset($product->image)}}"
-                                            alt="thumbnail"
-                                        />
-                                    </a>
-                                    <!-- product links -->
-                                    <ul class="actions d-flex justify-content-center">
-                                        <li>
-                                            <a class="action" href="{{route('main.product.Single.index', ['catSlug' => $productCat->slug, 'slug' => $product->slug]) }}">
-                        <span data-toggle="tooltip" data-placement="bottom" title="" class="icon-heart" data-original-title="add to wishlist">
+                        <div class="col-sm-6 col-md-4 mb-30">
+                            <div class="card product-card">
+                                <div class="card-body">
+                                    <div class="product-thumbnail position-relative">
+                                        <span class="badge badge-danger top-right">New</span>
+                                        <a href="{{route('main.product.Single.index', ['catSlug' => $productCat->slug, 'slug' => $product->slug]) }}">
+                                            <img
+                                                class="first-img"
+                                                src="{{asset($product->image)}}"
+                                                alt="thumbnail"
+                                            />
+                                        </a>
+                                        <ul class="actions d-flex justify-content-center">
+                                            <li>
+                                                <a class="action" style="cursor: pointer"
+                                                   >
+                        <span wire:click="addToFavorite({{$product->id}})" data-toggle="tooltip" data-placement="bottom" title="" class="icon-heart"
+                              data-original-title="add to wishlist">
                         </span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="action" href="#" data-toggle="modal" data-target="#compare">
-                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="icon-shuffle" data-original-title="Add to compare"></span>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a class="action" href="#" data-toggle="modal" data-target="#quick-view">
-                                                <span data-toggle="tooltip" data-placement="bottom" title="" class="icon-magnifier" data-original-title="Quick view"></span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="product-desc py-0 px-0">
-                                    <h3 class="title">
-                                        <a href="#"
-                                        >{{$product->name}}</a
-                                        >
-                                    </h3>
-                                    <div class="star-rating">
-                                        <span class="ion-ios-star"></span>
-                                        <span class="ion-ios-star"></span>
-                                        <span class="ion-ios-star"></span>
-                                        <span class="ion-ios-star"></span>
-                                        <span class="ion-ios-star de-selected"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="action" href="#" data-toggle="modal" data-target="#compare">
+                                                    <span data-toggle="tooltip" data-placement="bottom" title=""
+                                                          class="icon-shuffle"
+                                                          data-original-title="Add to compare"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="action" href="#" data-toggle="modal"
+                                                   data-target="#quick-view">
+                                                    <span data-toggle="tooltip" data-placement="bottom" title=""
+                                                          class="icon-magnifier"
+                                                          data-original-title="Quick view"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div
-                                        class="d-flex align-items-center justify-content-between"
-                                    >
-                                        <span class="product-price">$11.90</span>
-                                        <button
-                                            class="pro-btn"
-                                            data-toggle="modal"
-                                            data-target="#add-to-cart"
+                                    <div class="product-desc py-0 px-0">
+                                        <h3 class="title">
+                                            <a href="#"
+                                            >{{$product->name}}</a
+                                            >
+                                        </h3>
+                                        <div class="star-rating">
+                                            <span class="ion-ios-star"></span>
+                                            <span class="ion-ios-star"></span>
+                                            <span class="ion-ios-star"></span>
+                                            <span class="ion-ios-star"></span>
+                                            <span class="ion-ios-star de-selected"></span>
+                                        </div>
+                                        <div
+                                            class="d-flex align-items-center justify-content-between"
                                         >
-                                            <i class="icon-basket"></i>
-                                        </button>
+                                            <span class="product-price">$11.90</span>
+                                            <button
+                                                class="pro-btn"
+                                                data-toggle="modal"
+                                                data-target="#add-to-cart"
+                                            >
+                                                <i class="icon-basket"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- product-list End -->
-                    </div>
                     @endforeach
-
                 </div>
-
                 <div class="d-flex justify-content-center">
                     {!! $products->links() !!}
                 </div>
@@ -118,3 +117,12 @@
         </div>
     </div>
 </div>
+
+
+@section('script')
+    <script>
+        document.addEventListener('hell', e => {
+            console.log(e.detail)
+        })
+    </script>
+@endsection

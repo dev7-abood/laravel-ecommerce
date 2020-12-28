@@ -35,12 +35,12 @@
 {{--<x-landing-page.common-banner-tow-component/>--}}
 <!-- common banner  end -->
 <!-- Product tab repetition start -->
-{{--<x-landing-page.single-product-tab-repetition-component/>--}}
+{{--<x-landing-page.single-product-product-tab-repetition-component/>--}}
 <!-- Product tab repetition end -->
 <!-- blog-section start -->
 <!-- blog-section end -->
 <!-- brand slider start -->
-{{--<x-landing-page.brand-component/>--}}
+<x-landing-page.brand-component/>
 @endif
 <!-- brand slider end -->
 @yield('container')

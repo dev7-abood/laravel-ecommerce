@@ -16,4 +16,11 @@ class ProductCategory extends Model
        return $this->hasMany(Product::class,'p_category_id');
     }
 
+
+    public function brands()
+    {
+        return $this->belongsToMany(Brand::class,
+            'brand_product_category', 'p_category_id', 'brand_id');
+    }
+
 }

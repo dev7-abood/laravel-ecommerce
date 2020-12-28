@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ProductCategory extends Controller
 {
-    public function index()
+    public function index($brandSlug = null)
     {
-        return view('main.product-category.index');
+        return view('main.product-category.index', ['brandSlug' => $brandSlug]);
     }
 }

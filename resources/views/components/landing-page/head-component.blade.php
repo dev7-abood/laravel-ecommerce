@@ -27,6 +27,13 @@
     <link rel="stylesheet" href="/main/assets/css/plugins/aos.css"  data-turbolinks-track="reload"/>
     <link rel="stylesheet" href="/main/assets/css/style.min.css" data-turbolinks-track="reload"/>
 
+
+    <style>
+        .turbolinks-progress-bar {
+            height: 5px;
+            background-color: green;
+        }
+    </style>
     @livewireStyles
 
     @yield('style')

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Product\Single;
+namespace App\Http\Livewire\Product\SingleProduct;
 
 use App\Models\Product;
 use Livewire\Component;
@@ -9,7 +9,6 @@ use Livewire\WithPagination;
 class Show extends Component
 {
     use WithPagination;
-
 
     protected $paginationTheme = 'bootstrap';
 
@@ -20,7 +19,7 @@ class Show extends Component
     {
         $product = Product::with('images')->where('slug', $this->slug)->first();
         if ($product) {
-            return view('livewire.product.single.show', compact('product'));
+            return view('livewire.product.single-product.show', compact('product'));
         }
         abort(404);
     }

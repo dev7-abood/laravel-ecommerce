@@ -9,6 +9,6 @@ class ProductController extends Controller
 {
     public function show($catSlug, $slug)
     {
-        return view('main.single-product.index', ['catSlug' => $catSlug, 'slug' => $slug]);
+        return view('main.single-product.show', ['catSlug' => $catSlug, 'slug' => $slug]);
     }
 }

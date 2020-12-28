@@ -134,9 +134,9 @@
             nextArrow: `<button hidden></button>`
         });
         function changMinImage(e) {
-            // single-product = document.querySelector('.single-product-image')
-            // for (let i = 0; i < single-product.length; i++) {
-            //     console.log('fakeImage: ', single-product[i]);
+            // single-product-product = document.querySelector('.single-product-product-image')
+            // for (let i = 0; i < single-product-product.length; i++) {
+            //     console.log('fakeImage: ', single-product-product[i]);
             // }
             let getSlideImage = e.src
             document.getElementById('main-img').setAttribute('src', getSlideImage)

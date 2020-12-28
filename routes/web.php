@@ -25,7 +25,7 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
     Route::get('/', ['as' => 'landingPage', 'uses' => 'IndexController@index']);
 
     Route::group(['prefix' => 'product/categories', 'as' => 'categories.'], function (){
-        Route::get('/', ['as' => 'index', 'uses' => 'ProductCategory@index']);
+        Route::get('/{brandSlug?}', ['as' => 'index', 'uses' => 'ProductCategory@index']);
     });
 
     Route::group(['prefix' => 'products', 'as' => 'products.'], function (){
@@ -39,12 +39,12 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
 });
 
 
-use App\Models\ProductCategory;
+
+use App\Models\User;
+use App\Models\Product;
+
 Route::get('test', function (){
 
-    ProductCategory::where('slug', 'phone')->first();
-    ProductCategory::where('slug', 'phone')->first()->products()->paginate(2);
-
-
+   return Product::find(2)->productFavorites()->detach();
 
 });

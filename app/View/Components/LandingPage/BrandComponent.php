@@ -30,7 +30,7 @@ class BrandComponent extends Component
 
     public function brands()
     {
-        return Brand::with('image')->where('is_published', true)->get();
+        return Brand::all();
     }
 
 }

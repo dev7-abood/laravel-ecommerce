@@ -7,10 +7,10 @@
                     <div class="slider-item">
                         <div class="single-brand">
                             <a
-                                href="https://themeforest.net/user/hastech"
+                                href="{{route('main.categories.index', ['brandSlug' => $brand->slug])}}"
                                 class="brand-thumb"
                             >
-                                <img src="{{$brand->image->url}}" alt="brand-thumb-nail" title="{{$brand->title}}"/>
+                                <img src="{{$brand->image}}" alt="brand-thumb-nail" title="{{$brand->title}}"/>
                             </a>
                         </div>
                     </div>

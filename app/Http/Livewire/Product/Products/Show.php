@@ -7,6 +7,10 @@ use Livewire\Component;
 use App\Models\ProductCategory;
 use Livewire\WithPagination;
 
+use App\Models\User;
+
+
+
 class Show extends Component
 {
     use WithPagination;
@@ -14,6 +18,23 @@ class Show extends Component
     protected $paginationTheme = 'bootstrap';
 
     public $slug;
+
+    public function addToFavorite($productId)
+    {
+//        return Product::find(2)->productFavorites()->detach();
+
+     // hard code
+     User::find(1)->productFavorites()->sync([$productId], false);
+
+        $this->dispatchBrowserEvent('swal', [
+            'title' => 'Feedback Saved',
+            'timer'=>3000,
+            'icon'=>'success',
+            'toast'=>true,
+            'position'=>'top-right'
+        ]);
+    }
+
 
     public function render()
     {
@@ -28,6 +49,3 @@ class Show extends Component
        abort(404);
     }
 }
-//ProductCategory::with(['products', function($query){
-//    $query->paginate(10);
-//}])->where('slug', 'phone-phone')->first()

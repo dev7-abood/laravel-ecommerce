@@ -2,6 +2,12 @@ require('./bootstrap');
 
 // require('moment');
 
+import Swal from 'sweetalert2'
+
+window.addEventListener('swal',function(e){
+    Swal.fire(e.detail);
+});
+
 let Turbolinks = require("turbolinks")
 Turbolinks.start()
 

@@ -27,7 +27,7 @@
 {{--                                                alt="thumbnail"--}}
 {{--                                            />--}}
 {{--                                        </a>--}}
-{{--                                        <!-- Product links -->--}}
+{{--                                        <!-- ProductHelper links -->--}}
 {{--                                        <ul class="actions d-flex justify-content-center">--}}
 {{--                                            <li>--}}
 {{--                                                <a class="action" href="wishlist.html">--}}
@@ -71,7 +71,7 @@
 {{--                                                </a>--}}
 {{--                                            </li>--}}
 {{--                                        </ul>--}}
-{{--                                        <!-- Product links end-->--}}
+{{--                                        <!-- ProductHelper links end-->--}}
 {{--                                    </div>--}}
 {{--                                    <div class="media-body">--}}
 {{--                                        <div class="single-product-product-desc">--}}

@@ -6,9 +6,9 @@ namespace App\Helpers;
 use Illuminate\Support\Facades\DB;
 
 
-class Product{
+class ProductHelper{
 
-    public static function isFavorite($product_id, $table_name)
+    public static function isFavorite($product_id, $table_name): bool
     {
         try {
             $hasFav = DB::table($table_name)
@@ -36,7 +36,6 @@ class Product{
     public static function getAfterDiscount($price, $discount)
     {
         return ($price - ($price * $discount / 100));
-
     }
 
 

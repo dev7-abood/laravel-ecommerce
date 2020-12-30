@@ -5,17 +5,17 @@ namespace App\Observers;
 use App\Models\Product;
 use Illuminate\Support\Str;
 
-use App\Helpers\SlugUtf8;
+use App\Helpers\SlugUtf8Helper;
 
 class ProductObserver
 {
     public function creating(Product $product)
     {
         $product->uuid = (string) Str::uuid();
-        $product->slug = SlugUtf8::slug(Str::lower($product->name));
+        $product->slug = SlugUtf8Helper::slug(Str::lower($product->name));
     }
     /**
-     * Handle the Product "created" event.
+     * Handle the ProductHelper "created" event.
      *
      * @param  \App\Models\Product  $product
      * @return void
@@ -26,7 +26,7 @@ class ProductObserver
     }
 
     /**
-     * Handle the Product "updated" event.
+     * Handle the ProductHelper "updated" event.
      *
      * @param  \App\Models\Product  $product
      * @return void
@@ -37,7 +37,7 @@ class ProductObserver
     }
 
     /**
-     * Handle the Product "deleted" event.
+     * Handle the ProductHelper "deleted" event.
      *
      * @param  \App\Models\Product  $product
      * @return void
@@ -48,7 +48,7 @@ class ProductObserver
     }
 
     /**
-     * Handle the Product "restored" event.
+     * Handle the ProductHelper "restored" event.
      *
      * @param  \App\Models\Product  $product
      * @return void
@@ -59,7 +59,7 @@ class ProductObserver
     }
 
     /**
-     * Handle the Product "force deleted" event.
+     * Handle the ProductHelper "force deleted" event.
      *
      * @param  \App\Models\Product  $product
      * @return void

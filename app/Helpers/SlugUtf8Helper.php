@@ -2,7 +2,7 @@
 
 namespace App\Helpers;
 
-class SlugUtf8
+class SlugUtf8Helper
 {
     public static function Slug($string, $separator = '-') {
         if (is_null($string))

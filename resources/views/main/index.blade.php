@@ -28,15 +28,15 @@
 <!-- common banner  start -->
 {{--<x-landing-page.common-banner-one-component/>--}}
 {{--<!-- common banner  end -->--}}
-{{--<!-- Product tab start -->--}}
+{{--<!-- ProductHelper tab start -->--}}
 {{--<x-landing-page.product-top-component/>--}}
-{{--<!-- Product tab end -->--}}
+{{--<!-- ProductHelper tab end -->--}}
 {{--<!-- common banner  start -->--}}
 {{--<x-landing-page.common-banner-tow-component/>--}}
 <!-- common banner  end -->
-<!-- Product tab repetition start -->
+<!-- ProductHelper tab repetition start -->
 {{--<x-landing-page.single-product-product-tab-repetition-component/>--}}
-<!-- Product tab repetition end -->
+<!-- ProductHelper tab repetition end -->
 <!-- blog-section start -->
 <!-- blog-section end -->
 <!-- brand slider start -->

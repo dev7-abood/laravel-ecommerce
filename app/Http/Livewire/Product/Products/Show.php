@@ -19,7 +19,7 @@ class Show extends Component
 
     public function addToFavorite($uuid)
     {
-//  return Product::find(2)->productFavorites()->detach();
+//  return ProductHelper::find(2)->productFavorites()->detach();
     $id = Product::where('uuid', $uuid)->first()->id;
      auth()->user()->productFavorites()->sync([$id], false);
 

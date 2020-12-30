@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Support\Facades\DB;
-use App\Helpers\Product as HelperProduct;
+use App\Helpers\ProductHelper;
 
 class Product extends Model
 {
@@ -19,30 +19,30 @@ class Product extends Model
 
     protected $hidden =  ['is_favorite'];
 
-//    protected $casts = [
-//        'price' => 'decimal'
-//    ];
+    protected $casts = [
+        'price' => 'float'
+    ];
 
     public function getIsFavoriteAttribute()
     {
-      return HelperProduct::isFavorite($this->attributes['product_id'], 'favorite_products');
+      return ProductHelper::isFavorite($this->attributes['id'], 'favorite_products');
     }
 
     public function getTaxValAttribute()
     {
-       return (string) HelperProduct::getTaxVal($this->attributes['tax_id'], 'taxes') . '%';
+       return ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
     }
 
     public function getValueAddedTaxAttribute()
     {
-        $tax_val = HelperProduct::getTaxVal($this->attributes['tax_id'], 'taxes');
-        $after_discount = HelperProduct::getAfterDiscount($this->attributes['price'], $this->attributes['discount']);
-        return $after_discount + ($after_discount * ($tax_val / 100));
+        $tax_val = ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
+        $after_discount = ProductHelper::getAfterDiscount($this->attributes['price'], $this->attributes['discount']);
+        return round(($after_discount + ($after_discount * ($tax_val / 100))), 2);
     }
 
     public function getAfterDiscountAttribute()
     {
-       return HelperProduct::getAfterDiscount($this->attributes['price'], $this->attributes['discount']);
+       return round(ProductHelper::getAfterDiscount($this->attributes['price'], $this->attributes['discount']),2);
     }
 
     public function images()

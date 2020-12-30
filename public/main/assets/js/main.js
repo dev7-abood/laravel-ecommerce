@@ -160,10 +160,10 @@
     }]
   }).slickAnimation();
   /*--------------------------
-         Product slider init
+         ProductHelper slider init
         ---------------------------- */
 
-  var $productSliderInit = $(".Product-slider-init");
+  var $productSliderInit = $(".ProductHelper-slider-init");
   $productSliderInit.slick({
     autoplay: false,
     autoplaySpeed: 10000,
@@ -319,10 +319,10 @@
     ]
   });
   /*--------------------------
-         Product ctry slider init
+         ProductHelper ctry slider init
         ---------------------------- */
 
-  var $productCtry = $(".Product-ctry-init");
+  var $productCtry = $(".ProductHelper-ctry-init");
   $productCtry.slick({
     autoplay: false,
     autoplaySpeed: 10000,
@@ -496,10 +496,10 @@
     draggable: false
   });
   /*---------------------------
-      Product-syncing
+      ProductHelper-syncing
       ---------------------------- */
 
-  $(".Product-sync-init").slick({
+  $(".ProductHelper-sync-init").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
@@ -507,9 +507,9 @@
     arrows: false,
     dots: false,
     fade: true,
-    asNavFor: ".Product-sync-nav"
+    asNavFor: ".ProductHelper-sync-nav"
   });
-  $(".Product-sync-nav").slick({
+  $(".ProductHelper-sync-nav").slick({
     dots: false,
     arrows: false,
     infinite: true,
@@ -517,7 +517,7 @@
     nextArrow: '<button class="slick-next"><i class="fas fa-arrow-right"></i></button>',
     slidesToShow: 4,
     slidesToScroll: 1,
-    asNavFor: ".Product-sync-init",
+    asNavFor: ".ProductHelper-sync-init",
     focusOnSelect: true,
     draggable: false
   });

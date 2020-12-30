@@ -46,7 +46,7 @@ use App\Models\ProductCategory;
 
 Route::get('test', function (){
 
-//    return Product::has('userProductsFavorites')->get();
+//    return ProductHelper::has('userProductsFavorites')->get();
 
   return  Product::find(20);
 //    ->makeVisible(['is_favorite']);

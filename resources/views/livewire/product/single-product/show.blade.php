@@ -41,11 +41,19 @@
                         </div>
                     </div>
                     <div class="product-body mb-40">
-                        <div class="d-flex align-items-center mb-30">
-              <span class="product-price mr-20"><del class="del">${{$product->price}}</del>
-                <span class="onsale">${{$product->after_discount}}</span></span>
+           <div class="d-flex align-items-center mb-30">
+
+
+               <span class="product-price mr-20">
+                 @if($product->discount)
+                   <del class="del">${{$product->price}}</del>
+                @endif
+                      <span class="onsale">${{$product->after_discount}}</span></span>
+               @if($product->discount)
                             <span class="badge position-static bg-success rounded-0">Save {{$product->discount}}%</span>
+               @endif
                         </div>
+
                        {!! $product->desc !!}
                     </div>
                     <div class="product-footer">

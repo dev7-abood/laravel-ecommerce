@@ -85,13 +85,12 @@ class Product extends Model
         return $this->belongsTo(Tax::class);
     }
 
-
     public function productPropertyNames()
     {
         return $this->hasMany(ProductPropertyName::class)->with('productPropertyValues');
     }
 
-    /*
+/*
     protected static function boot()
     {
         parent::boot();
@@ -102,6 +101,4 @@ class Product extends Model
 
     }
 */
-
-
 }

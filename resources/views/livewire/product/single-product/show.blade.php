@@ -67,6 +67,8 @@
                                     <option value="3">XL</option>
                                 </select>
                             </div>
+
+
                             <div class="check-box ml-5">
                                 <h4 class="title">color</h4>
                                 <div class="d-flex check-box-wrap-list">
@@ -80,6 +82,8 @@
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
                         <div class="product-count style d-flex flex-column flex-sm-row mt-30 mb-20">
                             <div class="count d-flex">

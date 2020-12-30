@@ -48,7 +48,8 @@ Route::get('test', function (){
 
 //    return ProductHelper::has('userProductsFavorites')->get();
 
-  return  Product::find(20);
+//  return  Product::with()
+  return  Product::with('productPropertyNames')->find(1);
 //    ->makeVisible(['is_favorite']);
 
 

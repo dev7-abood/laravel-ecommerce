@@ -12,7 +12,6 @@ class Show extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-
     public $slug;
 
     public function render()

@@ -2,14 +2,12 @@
 
 namespace App\Http\Livewire\Product\Products;
 
+use App\Models\Product;
 use Livewire\Component;
 
 use App\Models\ProductCategory;
+
 use Livewire\WithPagination;
-
-use App\Models\User;
-
-
 
 class Show extends Component
 {
@@ -19,27 +17,28 @@ class Show extends Component
 
     public $slug;
 
-    public function addToFavorite($productId)
+    public function addToFavorite($uuid)
     {
-//        return Product::find(2)->productFavorites()->detach();
-
-     // hard code
-     User::find(1)->productFavorites()->sync([$productId], false);
+//  return Product::find(2)->productFavorites()->detach();
+    $id = Product::where('uuid', $uuid)->first()->id;
+     auth()->user()->productFavorites()->sync([$id], false);
 
         $this->dispatchBrowserEvent('swal', [
-            'title' => 'Feedback Saved',
+            'title' => __('products.added_to_favorites'),
             'timer'=>3000,
             'icon'=>'success',
             'toast'=>true,
             'position'=>'top-right'
         ]);
+        $this->dispatchBrowserEvent('addToFavorite', [
+              'uuid' => $uuid,
+        ]);
     }
-
 
     public function render()
     {
 
-       $products = ProductCategory::where('slug', $this->slug)->first()->products()->paginate(6);
+       $products   = ProductCategory::where('slug', $this->slug)->first()->makeVisible(['is_favorite'])->products()->paginate(6);
        $productCat = ProductCategory::where('slug', $this->slug)->first();
 
        if ($products)

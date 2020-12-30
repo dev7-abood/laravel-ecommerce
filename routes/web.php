@@ -42,9 +42,15 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
 
 use App\Models\User;
 use App\Models\Product;
+use App\Models\ProductCategory;
 
 Route::get('test', function (){
 
-   return Product::find(2)->productFavorites()->detach();
+//    return Product::has('userProductsFavorites')->get();
+
+  return  Product::find(20);
+//    ->makeVisible(['is_favorite']);
+
+
 
 });

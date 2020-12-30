@@ -17,7 +17,7 @@ class CreateTaxesTable extends Migration
             $table->id();
 
             $table->string('name');
-            $table->integer('tax_val');
+            $table->decimal('tax_val');
 
             $table->timestamps();
         });

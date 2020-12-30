@@ -1,4 +1,4 @@
-<div class="product-tab bg-white pt-80 pb-80">
+<div class="product-tab bg-white pt-40 pb-40">
     <div class="container">
         <div class="grid-nav-wraper bg-lighten2 mb-30">
             <div class="row align-items-center">
@@ -55,9 +55,9 @@
                                         </a>
                                         <ul class="actions d-flex justify-content-center">
                                             <li>
-                                                <a class="action" style="cursor: pointer"
+                                                <a id="{{$product->uuid}}" class="action" style="cursor: pointer;@if($product->is_favorite) background-color: #5a5ac9;color: white @endif"
                                                    >
-                        <span wire:click="addToFavorite({{$product->id}})" data-toggle="tooltip" data-placement="bottom" title="" class="icon-heart"
+                        <span wire:click="addToFavorite('{{$product->uuid}}')" data-toggle="tooltip" data-placement="bottom" title="" class="icon-heart"
                               data-original-title="add to wishlist">
                         </span>
                                                 </a>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="product-desc py-0 px-0">
                                         <h3 class="title">
-                                            <a href="#"
+                                            <a href="{{route('main.product.Single.index', ['catSlug' => $productCat->slug, 'slug' => $product->slug]) }}"
                                             >{{$product->name}}</a
                                             >
                                         </h3>
@@ -95,7 +95,7 @@
                                         <div
                                             class="d-flex align-items-center justify-content-between"
                                         >
-                                            <span class="product-price">$11.90</span>
+                                            <span class="product-price">${{$product->after_discount}}</span>
                                             <button
                                                 class="pro-btn"
                                                 data-toggle="modal"
@@ -121,8 +121,9 @@
 
 @section('script')
     <script>
-        document.addEventListener('hell', e => {
-            console.log(e.detail)
+        document.addEventListener('addToFavorite', e => {
+            document.getElementById(e.detail.uuid).style.backgroundColor = '#5a5ac9'
+            document.getElementById(e.detail.uuid).style.color = '#fff'
         })
     </script>
 @endsection

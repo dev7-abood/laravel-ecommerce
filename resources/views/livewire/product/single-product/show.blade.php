@@ -3,7 +3,7 @@
         <div class="row d-flex">
             <div class="col-lg-6">
                 <div class="main-img mb-4">
-                    <img class="" height="450" id="main-img" src="{{$product->image}}" alt="" title=""
+                    <img class="" height="390" id="main-img" src="{{$product->image}}" alt="" title=""
                          style="border-radius: 2px">
                 </div>
 
@@ -34,22 +34,22 @@
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
-                            <a href="#" id="write-comment"><span class="ml-2"><i class="far fa-comment-dots"></i></span>
-                                Read reviews <span>(1)</span></a>
-                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="edite"><i class="far fa-edit"></i></span> Write a
-                                review</a>
+{{--                            <a href="#" id="write-comment"><span class="ml-2"><i class="far fa-comment-dots"></i></span>--}}
+{{--                                Read reviews <span>(1)</span></a>--}}
+{{--                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="edite"><i class="far fa-edit"></i></span> Write a--}}
+{{--                                review</a>--}}
                         </div>
                     </div>
                     <div class="product-body mb-40">
                         <div class="d-flex align-items-center mb-30">
-              <span class="product-price mr-20"><del class="del">$23.90</del>
-                <span class="onsale">$21.51</span></span>
-                            <span class="badge position-static bg-dark rounded-0">Save 10%</span>
+              <span class="product-price mr-20"><del class="del">${{$product->price}}</del>
+                <span class="onsale">${{$product->after_discount}}</span></span>
+                            <span class="badge position-static bg-success rounded-0">Save {{$product->discount}}%</span>
                         </div>
                        {!! $product->desc !!}
                     </div>
                     <div class="product-footer">
-                        <div class="d-flex justify-content-around">
+                        <div class="d-flex justify-content-between">
                             <div class="product-size mr-5">
                                 <h3 class="title">size</h3>
                                 <select>
@@ -94,25 +94,25 @@
                         </div>
                         <div class="addto-whish-list">
                             <a href="#"><i class="icon-heart"></i> Add to wishlist</a>
-                            <a href="#"><i class="icon-shuffle"></i> Add to compare</a>
+{{--                            <a href="#"><i class="icon-shuffle"></i> Add to compare</a>--}}
                         </div>
-                        <div class="pro-social-links mt-10">
-                            <ul class="d-flex align-items-center">
-                                <li class="share">Share</li>
-                                <li>
-                                    <a href="#"><i class="ion-social-facebook"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ion-social-twitter"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ion-social-google"></i></a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="ion-social-pinterest"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+{{--                        <div class="pro-social-links mt-10">--}}
+{{--                            <ul class="d-flex align-items-center">--}}
+{{--                                <li class="share">Share</li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"><i class="ion-social-facebook"></i></a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"><i class="ion-social-twitter"></i></a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"><i class="ion-social-google"></i></a>--}}
+{{--                                </li>--}}
+{{--                                <li>--}}
+{{--                                    <a href="#"><i class="ion-social-pinterest"></i></a>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>

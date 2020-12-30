@@ -97,14 +97,6 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="compare.html">
-                    <span class="position-relative">
-                      <i class="icon-shuffle"></i>
-                      <span class="badge cbdg1">1</span>
-                    </span>
-                                </a>
-                            </li>
-                            <li>
                                 <a class="offcanvas-toggle" href="#offcanvas-wishlist">
                     <span class="position-relative">
                       <i class="icon-heart"></i>

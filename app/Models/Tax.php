@@ -10,4 +10,14 @@ class Tax extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function tableName()
+    {
+        return $this->table;
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

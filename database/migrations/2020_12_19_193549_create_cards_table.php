@@ -20,12 +20,9 @@ class CreateCardsTable extends Migration
 
             $table->integer('quantity');
             $table->integer('tax_val');
-            $table->integer('dis_percent');
-            $table->decimal('price'); // After discount
-            $table->boolean('is_show')->default(true);
 
-//            $table->integer('main_price');
-//            $table->integer('dis_price');
+            $table->decimal('price'); // After discount
+            $table->boolean('is_published')->default(true);
 
             $table->unsignedBigInteger('product_id')->index()->nullable();
             $table->foreign('product_id')->references('id')

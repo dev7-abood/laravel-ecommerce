@@ -15,25 +15,21 @@ class CreateCardsTable extends Migration
     {
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
-
             $table->string('product_name');
-
-            $table->integer('quantity');
-            $table->integer('tax_val');
-
             $table->decimal('price'); // After discount
+            $table->integer('quantity');
+            $table->string('properties');
+            $table->string('tax_percent')->nullable();
+            $table->string('tax_before_increase')->nullable();
             $table->boolean('is_published')->default(true);
-
             $table->unsignedBigInteger('product_id')->index()->nullable();
             $table->foreign('product_id')->references('id')
                 ->on('products')
                 ->cascadeOnUpdate();
-
             $table->unsignedBigInteger('user_id')->index();
             $table->foreign('user_id')->references('id')
                 ->on('users')
                 ->cascadeOnUpdate();
-
             $table->timestamps();
         });
     }

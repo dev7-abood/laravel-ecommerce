@@ -26,8 +26,7 @@ class CreateProductsTable extends Migration
             $table->integer('discount')->nullable();
             $table->integer('quantity')->nullable();
 
-            $table->boolean('new')->default(false)->nullable();
-
+//            $table->boolean('new')->default(false)->nullable();
 
             $table->unsignedBigInteger('brand_id')->index();
             $table->foreign('brand_id')->references('id')

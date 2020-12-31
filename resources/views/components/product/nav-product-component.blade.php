@@ -1,4 +1,4 @@
-<nav class="breadcrumb-section theme1 pt-110 pb-110" style="background-image: url({{asset($productCat->image)}});background-size: cover">
+<nav class="breadcrumb-section pt-90 pb-90" style="background-image: url({{asset($productCat->image)}}); background-repeat: no-repeat;;background-size: cover !important;object-fit: cover !important;">
     <div class="container">
         <div class="row p-5" style="background-color: rgba(10,0,0,0.4);border-radius: 5px">
             <div class="col-12 d-flex justify-content-center">

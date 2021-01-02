@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Product\Products;
+namespace App\Http\Livewire\Product;
 
 use App\Models\Product;
 use Livewire\Component;
@@ -9,7 +9,7 @@ use App\Models\ProductCategory;
 
 use Livewire\WithPagination;
 
-class Show extends Component
+class ProductsLivewire extends Component
 {
     use WithPagination;
 
@@ -43,7 +43,7 @@ class Show extends Component
 
        if ($products)
        {
-           return view('livewire.product.products.show', ['products' => $products, 'productCat' => $productCat]);
+           return view('livewire.product.products-livewire', ['products' => $products, 'productCat' => $productCat]);
        }
        abort(404);
     }

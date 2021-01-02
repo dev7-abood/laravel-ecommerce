@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="be87269d-7323-4e29-9109-2cc89a0cefd2" name="Default Changelist" comment="">
+    <list default="true" id="743bb3ec-7b2d-4d27-ab6f-b203515cdbe7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProductLivewire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProduct/Show.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProduct/Show.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Product/ProductCategory/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Product/ProductCategoryLivewire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Product/Products/Show.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Product/ProductsLivewire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProduct/Show.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_181041_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_181041_create_products_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_193549_create_cards_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_193549_create_cards_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/product/nav-product-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/product/nav-product-component.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/single-product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/single-product/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/landing-page/head-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/landing-page/head-component.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/product-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/product-category-livewire.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/products-livewire.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/single-product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/product-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/product-category/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/products/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/main/single-product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/single-product/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +29,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -29,6 +38,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
+      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -47,6 +57,7 @@
       <path value="$PROJECT_DIR$/vendor/filp/whoops" />
       <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
@@ -57,6 +68,7 @@
       <path value="$PROJECT_DIR$/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
       <path value="$PROJECT_DIR$/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
       <path value="$PROJECT_DIR$/vendor/livewire/livewire" />
       <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
@@ -69,6 +81,7 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
@@ -105,6 +118,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
@@ -145,21 +159,15 @@
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
       <path value="$PROJECT_DIR$/vendor/jenssegers/agent" />
       <path value="$PROJECT_DIR$/vendor/jaybizzle/crawler-detect" />
+      <path value="$PROJECT_DIR$/vendor/intervention/image" />
       <path value="$PROJECT_DIR$/vendor/mobiledetect/mobiledetectlib" />
       <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
-      <path value="$PROJECT_DIR$/vendor/realrashid/sweet-alert" />
-      <path value="$PROJECT_DIR$/vendor/league/oauth1-client" />
-      <path value="$PROJECT_DIR$/vendor/laravel/socialite" />
-      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
-      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
-      <path value="$PROJECT_DIR$/vendor/intervention/image" />
     </include_path>
   </component>
-  <component name="ProjectId" id="1lsKuTNOlpsBBL5BqrPTulhxuT4" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1mVzUcUcuc7xUTIY1HK8yWtUMqt" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -168,24 +176,11 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-    <property name="ts.external.directory.path" value="C:\Users\Abood\AppData\Local\JetBrains\Toolbox\apps\PhpStorm\ch-0\203.5981.175\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Abood\Desktop\Laravel\ecommerce\app\View\Components\product\single" />
-      <recent name="C:\Users\Abood\Desktop\Laravel\ecommerce\resources\views\components\product\single" />
-      <recent name="C:\Users\Abood\Desktop\Laravel\ecommerce\app\View\Components\landing-page" />
-      <recent name="C:\Users\Abood\Desktop\Laravel\ecommerce\resources\views\components\landing-page" />
+      <recent name="C:\Users\Abood\Desktop\Laravel\ecommerce\resources\views\livewire\product" />
     </key>
   </component>
   <component name="RunManager">
@@ -197,27 +192,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="be87269d-7323-4e29-9109-2cc89a0cefd2" name="Default Changelist" comment="" />
-      <created>1608380588148</created>
+      <changelist id="743bb3ec-7b2d-4d27-ab6f-b203515cdbe7" name="Default Changelist" comment="" />
+      <created>1609593567953</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1608380588148</updated>
-      <workItem from="1608380598062" duration="23658000" />
-      <workItem from="1608465230085" duration="10466000" />
-      <workItem from="1608486279480" duration="1010000" />
-      <workItem from="1608557506442" duration="14535000" />
-      <workItem from="1608585378039" duration="9399000" />
-      <workItem from="1608643919299" duration="21762000" />
-      <workItem from="1608769286293" duration="2047000" />
-      <workItem from="1608809997103" duration="44466000" />
-      <workItem from="1608912579193" duration="3738000" />
-      <workItem from="1608932545049" duration="32751000" />
-      <workItem from="1609030479725" duration="146000" />
-      <workItem from="1609062974114" duration="36742000" />
-      <workItem from="1609167524631" duration="59527000" />
-      <workItem from="1609327471047" duration="20757000" />
-      <workItem from="1609365643480" duration="1916000" />
-      <workItem from="1609417896514" duration="27638000" />
+      <updated>1609593567953</updated>
+      <workItem from="1609593572695" duration="1451000" />
     </task>
     <servers />
   </component>

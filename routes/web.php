@@ -49,7 +49,7 @@ Route::get('test', function (){
 //    return ProductHelper::has('userProductsFavorites')->get();
 
 //  return  Product::with()
-//  return  Product::find(1)->productPropertyNames;
+  return  Product::find(1);
 //////    ->makeVisible(['is_favorite']);
 //
 //    $myString = "color:red,green,blue|size:xl";

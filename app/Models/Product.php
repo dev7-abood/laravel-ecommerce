@@ -25,7 +25,7 @@ class Product extends Model
 //    protected $hidden =  ['is_favorite'];
 
     protected $casts = [
-        'price' => 'float'
+        'main_price' => 'float'
     ];
 
     public function getIsFavoriteAttribute()
@@ -41,20 +41,20 @@ class Product extends Model
     public function getTaxBeforeIncreaseAttribute()
     {
         $tax_val = ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
-        $after_discount = ProductHelper::getAfterDiscount($this->attributes['price'], $this->attributes['discount']);
+        $after_discount = ProductHelper::getAfterDiscount($this->attributes['main_price'], $this->attributes['discount']);
         return round(($after_discount * ($tax_val / 100)), 2);
     }
 
     public function getValueAddedTaxAttribute()
     {
         $tax_val = (float) ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
-        $after_discount = (float) ProductHelper::getAfterDiscount($this->attributes['price'], $this->attributes['discount']);
+        $after_discount = (float) ProductHelper::getAfterDiscount($this->attributes['main_price'], $this->attributes['discount']);
         return round(($after_discount + ($after_discount * ($tax_val / 100))), 2);
     }
 
     public function getAfterDiscountAttribute()
     {
-       return round(ProductHelper::getAfterDiscount($this->attributes['price'], $this->attributes['discount']),2);
+       return round(ProductHelper::getAfterDiscount($this->attributes['main_price'], $this->attributes['discount']),2);
     }
 
     public function images()

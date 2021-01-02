@@ -22,8 +22,8 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->text('desc');
 
-            $table->decimal('price');
-            $table->integer('discount')->nullable();
+            $table->decimal('main_price');
+            $table->decimal('discount')->nullable();
             $table->integer('quantity')->nullable();
 
 //            $table->boolean('new')->default(false)->nullable();

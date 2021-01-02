@@ -46,7 +46,7 @@
 
                <span class="product-price mr-20">
                  @if($product->discount)
-                       <del class="del">${{$product->price}}</del>
+                       <del class="del">${{$product->main_price}}</del>
                    @endif
                       <span class="onsale">${{$product->after_discount}}</span></span>
                             @if($product->discount)
@@ -57,16 +57,17 @@
 
                         {!! $product->desc !!}
                     </div>
-
+                <form wire:submit.prevent="submitAddToCard">
                     @foreach($productProperty as $property)
                         @if($property['type'] == 'select')
-                            <div class="product-footer">
+                            <div wire:key="{{ $loop->index }}" class="product-footer">
                                 <div class="d-flex justify-content-between">
                                     <div class="product-size mr-5">
                                         <h3 class="title">{{$property['p_property_name']}}</h3>
-                                        <select>
-                                            @foreach($property['product_property_values'] as  $value)
-                                                <option value="0">{{$value['p_property_value']}}</option>
+                                        <select wire:model="property">
+                                            <option></option>
+                                        @foreach($property['product_property_values'] as  $value)
+                                                <option value="{{$property['p_property_name'].'|'.$value['p_property_value']}}">{{$value['p_property_value']}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -74,14 +75,15 @@
                                     @endforeach
                                     @foreach($productProperty as $property)
                                         @if($property['type'] == 'checkbox')
-                                            <div class="check-box ml-5">
+                                            <div wire:key="{{ $loop->index }}" class="check-box ml-5">
+
                                                 <h4 class="title">{{$property['p_property_name']}}</h4>
                                                 <div class="d-flex check-box-wrap-list">
                                                     @foreach($property['product_property_values'] as  $value)
-                                                        <div class="widget-check-box">
+                                                        <div wire:key="{{ $loop->index }}" class="widget-check-box">
                                                             <div
                                                                 style="background-color: {{$value['p_property_value']}};width: 15px;height: 5px"></div>
-                                                            <input type="checkbox"
+                                                            <input type="checkbox" wire:model="checkbox.{{$property['p_property_name'].'|'.$value['p_property_value']}}"
                                                                    id="p_property_value_{{$loop->index}}">
                                                             <label for="p_property_value_{{$loop->index}}"></label>
                                                         </div>
@@ -93,23 +95,25 @@
                                 </div>
                                 <div class="product-count style d-flex flex-column flex-sm-row mt-30 mb-20">
                                     <div class="count d-flex">
-                                        <input type="number" min="1" max="10" step="1" value="1">
+                                       <input id="quantity" type="number" min="1" max="10" disabled  step="1" value="{{$quantity}}">
                                         <div class="button-group">
-                                            <button class="count-btn increment">
+                                            <button wire:click="increment"  type="button" class="count-btn increment">
                                                 <i class="fas fa-chevron-up"></i>
                                             </button>
-                                            <button class="count-btn decrement">
+                                            <button wire:click="decrement" type="button" class="count-btn decrement">
                                                 <i class="fas fa-chevron-down"></i>
                                             </button>
                                         </div>
                                     </div>
                                     <div>
-                                        <button class="btn btn-dark btn--xl mt-5 mt-sm-0">
+                                        <button type="submit" class="btn btn-dark btn--xl mt-5 mt-sm-0">
                                             <span class="mr-2"><i class="ion-android-add"></i></span>
                                             Add to cart
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+                </form>
                                 <div class="addto-whish-list">
                                     <a href="#"><i class="icon-heart"></i> Add to wishlist</a>
 {{--                                    <a href="#"><i class="icon-shuffle"></i> Add to compare</a>--}}
@@ -156,8 +160,7 @@
         });
         document.getElementById('prevArrowEdit').classList.remove("slick-arrow");
     </script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js" integrity="sha512-UH428GPLVbCa8xDVooDWXytY8WASfzVv3kxCvTAFkxD2vPjouf1I3+RJ2QcSckESsb7sI+gv3yhsgw9ZhM7sDw==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js" integrity="sha512-UH428GPLVbCa8xDVooDWXytY8WASfzVv3kxCvTAFkxD2vPjouf1I3+RJ2QcSckESsb7sI+gv3yhsgw9ZhM7sDw==" crossorigin="anonymous" data-turbolinks-track="reload"></script>
     <script>
         function changMinImage(e) {
             let getSlideImage = e
@@ -167,4 +170,8 @@
         }
         $(`#main-img`).elevateZoom({cursor: "crosshair",scrollZoom : true});
     </script>
+
+@endsection
+@section('style')
+<meta name="turbolinks-visit-control" content="reload">
 @endsection

@@ -37,7 +37,7 @@
     @livewireStyles
 
     @yield('style')
-
+{{--    <meta name="turbolinks-cache-control" content="no-cache">--}}
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
 
     <!--****************************

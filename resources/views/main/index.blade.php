@@ -49,9 +49,9 @@
 <!-- footer end -->
 <livewire:landing-page.models-middle-component/>
 <x-landing-page.script-component/>
-@yield('script')
 @livewireScripts
 <script src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
+@yield('script')
 </body>
 </html>

@@ -641,7 +641,7 @@
     // Set true to use image
     activeOverlay: false,
     // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-    zIndex: 214 // Z-Index for the overlay
+    zIndex: 214 // Z-ProductCategory for the overlay
 
   });
 })(jQuery);

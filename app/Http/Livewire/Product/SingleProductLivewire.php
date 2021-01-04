@@ -8,8 +8,6 @@ use Livewire\WithPagination;
 
 use App\Models\Card;
 
-use Illuminate\Http\Request;
-
 class SingleProductLivewire extends Component
 {
     use WithPagination;
@@ -21,14 +19,18 @@ class SingleProductLivewire extends Component
     public $product;
     public $productProperty;
 
-    protected $inputs = [
-        'name'
-    ];
+    public $quantity;
 
+    protected $listeners = ['store', 'quantity' => 'asQuantity'];
+
+    public function asQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+    }
 
     public function mount()
     {
-        $this->p_property_name[0] = '';
+        $this->quantity = 1;
     }
 
     public function render()
@@ -43,70 +45,64 @@ class SingleProductLivewire extends Component
     }
 
 
-    public $quantity = 1;
     public $checkbox = [];
-    public $p_property_name = [];
     public $property;
-
-    public function increment()
-    {
-        if ($this->quantity <= 9)
-            $this->quantity++;
-    }
-
-    public function decrement()
-    {
-        if ($this->quantity > 1)
-            $this->quantity--;
-    }
-
 
     protected $rules = [
         'quantity' => 'required|max:2',
         'property' => 'required',
     ];
 
-    public function submitAddToCard(Request $request)
+    public function store()
     {
-
-
-        dd($this->property);
-//        $this->validate($this->rules);
-//dd($this->quantity);
-//        Card::create(
-//            [
-//                'product_name' => $this->product->name,
-//                'main_price' => $this->product->main_price,
-//                'after_discount' => $this->product->after_discount,
-//                'quantity' => $this->quantity,
-//                'total_price' => $this->product->after_discount * $this->quantity,
-//                'properties' => 'dsdsd',
-//                'tax_val' => $this->product->tax_val,
-//                'value_added_tax' => $this->product->value_added_tax,
-//                'tax_before_increase' => $this->product->tax_before_increase,
-//                'is_published' => true,
-//                'product_id' => $this->product->id,
-//                // hard code
-//                'user_id' => 1,
-//            ]
-//        );
-//
+//      $this->validate($this->rules);
         $checkbox = array_filter($this->checkbox, function ($check){
             return $check == true;
         });
+        $property = '';
+        foreach (array_keys($checkbox) as $pro){
+            $property .= $pro;
+        }
+        $property .= $this->property;
 
-        dd($this->p_property_name);
-//        dd(array_keys($checkbox));
+        Card::create(
+            [
+                'product_name' => $this->product->name,
+                'main_price' => $this->product->main_price,
+                'after_discount' => $this->product->after_discount,
+                'quantity' => $this->quantity,
+                'total_price' => $this->product->after_discount * $this->quantity,
+                'properties' => $property,
+                'tax_val' => $this->product->tax_val,
+                'image' => $this->product->image,
+                'value_added_tax' => $this->product->value_added_tax,
+                'tax_before_increase' => $this->product->tax_before_increase,
+                'is_published' => true,
+                'product_id' => $this->product->id,
+                'user_id' => auth()->id(),
+            ]
+        );
+
+      $this->dispatchBrowserEvent('swal', [
+           'title' => __('products.added_to_card', ['product_name' => $this->product->name ]),
+           'timer'=>3000,
+           'icon'=>'success',
+           'toast'=>true,
+           'position'=>'top-right'
+        ]);
+
+        $this->emit('refreshCard');
     }
 
-
+    public function submitAddToCard()
+    {
+        $cardIsExist = Card::where('product_name', $this->product->name)->first();
+        if ($cardIsExist)
+        {
+            $this->dispatchBrowserEvent('conform_product_exist_or_not');
+            $this->emit('refreshCard');
+        }else{
+            $this->store();
+        }
+    }
 }
-
-
-//        $this->dispatchBrowserEvent('swal', [
-//            'title' => __('products.added_to_favorites'),
-//            'timer'=>3000,
-//            'icon'=>'success',
-//            'toast'=>true,
-//            'position'=>'top-right'
-//        ]);

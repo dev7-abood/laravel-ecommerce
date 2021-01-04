@@ -6,8 +6,19 @@ use Livewire\Component;
 
 class HeaderMiddleComponent extends Component
 {
+
+    public $cardCount;
+
+    protected $listeners = ['refreshCard' => '$refresh'];
+
     public function render()
     {
-        return view('livewire.landing-page.header-middle-component');
+        if (auth()->check()) {
+            $this->cardCount = auth()->user()->cards()->where('is_published', true)->count();
+        } else{
+          $this->cardCount = 0;
+      }
+
+        return view('livewire.landing-page.header-middle-component', ['cardCount' => $this->cardCount]);
     }
 }

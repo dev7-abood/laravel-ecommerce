@@ -24,6 +24,7 @@ class CreateCardsTable extends Migration
 
             $table->integer('quantity')->default(1);
             $table->string('properties');
+            $table->string('image')->nullable();
 
             $table->string('tax_val')->nullable();
             $table->string('value_added_tax')->nullable();

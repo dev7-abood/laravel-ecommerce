@@ -7,6 +7,7 @@ import Swal from 'sweetalert2'
 window.addEventListener('swal',function(e){
     Swal.fire(e.detail);
 });
+window.Swal = Swal;
 
 let Turbolinks = require("turbolinks")
 Turbolinks.start()

@@ -34,7 +34,8 @@
             background-color: green;
         }
     </style>
-    @livewireStyles
+
+@livewireStyles
 
     @yield('style')
 {{--    <meta name="turbolinks-cache-control" content="no-cache">--}}

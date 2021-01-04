@@ -60,14 +60,13 @@
                 <form wire:submit.prevent="submitAddToCard">
                     @foreach($productProperty as $property)
                         @if($property['type'] == 'select')
-                            <div wire:key="{{ $loop->index }}" class="product-footer">
+                            <div class="product-footer">
                                 <div class="d-flex justify-content-between">
                                     <div class="product-size mr-5">
                                         <h3 class="title">{{$property['p_property_name']}}</h3>
                                         <select wire:model="property">
-                                            <option></option>
                                         @foreach($property['product_property_values'] as  $value)
-                                                <option value="{{$property['p_property_name'].'|'.$value['p_property_value']}}">{{$value['p_property_value']}}</option>
+                                                <option value="{{$property['p_property_name'].':'.$value['p_property_value'].'|'}}">{{$value['p_property_value']}}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -75,15 +74,15 @@
                                     @endforeach
                                     @foreach($productProperty as $property)
                                         @if($property['type'] == 'checkbox')
-                                            <div wire:key="{{ $loop->index }}" class="check-box ml-5">
+                                            <div class="check-box ml-5">
 
                                                 <h4 class="title">{{$property['p_property_name']}}</h4>
                                                 <div class="d-flex check-box-wrap-list">
                                                     @foreach($property['product_property_values'] as  $value)
-                                                        <div wire:key="{{ $loop->index }}" class="widget-check-box">
+                                                        <div class="widget-check-box">
                                                             <div
                                                                 style="background-color: {{$value['p_property_value']}};width: 15px;height: 5px"></div>
-                                                            <input type="checkbox" wire:model="checkbox.{{$property['p_property_name'].'|'.$value['p_property_value']}}"
+                                                            <input type="checkbox" wire:model="checkbox.{{$property['p_property_name'].':'.$value['p_property_value'].'|'}}"
                                                                    id="p_property_value_{{$loop->index}}">
                                                             <label for="p_property_value_{{$loop->index}}"></label>
                                                         </div>
@@ -95,12 +94,12 @@
                                 </div>
                                 <div class="product-count style d-flex flex-column flex-sm-row mt-30 mb-20">
                                     <div class="count d-flex">
-                                       <input id="quantity" type="number" min="1" max="10" disabled  step="1" value="{{$quantity}}">
+                                       <input id="quantity" value="1" type="number" min="1" max="10"  step="1" disabled>
                                         <div class="button-group">
-                                            <button wire:click="increment"  type="button" class="count-btn increment">
+                                            <button onclick="increment()"  type="button" class="count-btn">
                                                 <i class="fas fa-chevron-up"></i>
                                             </button>
-                                            <button wire:click="decrement" type="button" class="count-btn decrement">
+                                            <button onclick="decrement()" type="button" class="count-btn">
                                                 <i class="fas fa-chevron-down"></i>
                                             </button>
                                         </div>
@@ -139,9 +138,56 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
+
+
 @section('script')
+    <script>
+
+        function increment()
+        {
+            let quantity = document.getElementById('quantity').value;
+            if (parseInt(quantity) <= 9)
+            {
+                let value = parseInt(quantity) + 1;
+                document.getElementById('quantity').value = value;
+                this.livewire.emit('quantity', value)
+            }
+
+        }
+        function decrement()
+        {
+            let quantity = document.getElementById('quantity').value;
+            if (quantity > 1)
+            {
+                let value = parseInt(quantity) - 1;
+                document.getElementById('quantity').value = value;
+                this.livewire.emit('quantity', value)
+            }
+
+        }
+
+        window.addEventListener('conform_product_exist_or_not', e => {
+            Swal.fire({
+                title: 'The product in the card do you want to add the same product to card?',
+                showCancelButton: true,
+                icon: 'info',
+                confirmButtonText: `Save`,
+                customClass: {
+                    confirmButton: 'bg-success' //insert class here
+                }
+            }).then((result) => {
+                console.log(result)
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    livewire.emit('store')
+                } else if (result.isDenied) {
+                    Swal.fire('Changes are not saved', '', 'info')
+                }
+            })
+        })
+
+    </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
         $('.responsive').slick({

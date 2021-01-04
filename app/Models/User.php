@@ -61,11 +61,18 @@ class User extends Authenticatable
         'profile_photo_url'
     ];
 
-    protected $with = ['productFavorites'];
+//    protected $with = ['productFavorites'];
 
     public function productFavorites()
     {
         return $this->belongsToMany(Product::class, 'favorite_products')->withTimestamps();
+    }
+
+
+
+    public function cards()
+    {
+        return $this->hasMany(Card::class);
     }
 
 

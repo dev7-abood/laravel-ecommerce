@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Card;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,20 +45,6 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\ProductCategory;
 
-Route::get('test', function (){
-
-//    return ProductHelper::has('userProductsFavorites')->get();
-
-//  return  Product::with()
-  return  Product::find(1);
-//////    ->makeVisible(['is_favorite']);
-//
-//    $myString = "color:red,green,blue|size:xl";
-//   return $myArray = explode('|', $myString);
-
-
-return   Product::where('slug', 'J-7')->first()->productPropertyNames->toArray()[0]['product_property_values'];
-
-//    ->product_property_values;
-
+Route::get('test/{card}', function (Card $card){
+    return $card;
 });

@@ -40,6 +40,7 @@
 <!-- blog-section start -->
 <!-- blog-section end -->
 <!-- brand slider start -->
+<button id="dd">dd</button>
 <x-landing-page.brand-component/>
 @endif
 <!-- brand slider end -->
@@ -51,6 +52,12 @@
 <x-landing-page.script-component/>
 @livewireScripts
 <script src="/js/app.js"></script>
+<script>
+
+    document.getElementById('dd').addEventListener('click',function(e){
+        console.log('s')
+        Swal.fire('ddd');
+    });</script>
 <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
 @yield('script')
 </body>

@@ -1,3 +1,4 @@
+<div>
 <div id="offcanvas-mobile-menu" class="offcanvas theme1 offcanvas-mobile-menu">
     <!-- offcanvas-mobile-menu start -->
     <div class="inner">
@@ -18,11 +19,11 @@
                             <span>(3)</span></a
                         >
                     </li>
-                    <li class="my-2 mx-2">
-                        <a href="compare.html"
-                        ><i class="ion-ios-loop-strong"></i> Compare <span>(2)</span>
-                        </a>
-                    </li>
+{{--                    <li class="my-2 mx-2">--}}
+{{--                        <a href="compare.html"--}}
+{{--                        ><i class="ion-ios-loop-strong"></i> Compare <span>(2)</span>--}}
+{{--                        </a>--}}
+{{--                    </li>--}}
                     <li class="my-2 mx-2">
                         <a class="search search-toggle" href="javascript:void(0)">
                             <i class="icon-magnifier"></i> Search</a
@@ -204,7 +205,7 @@
 </div>
 <!-- offcanvas-mobile-menu end -->
 <!-- OffCanvas Wishlist Start -->
-<div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist theme1">
+<div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist theme1" style="overflow: scroll">
     <div class="inner">
         <div class="head d-flex flex-wrap justify-content-between">
             <span class="title">Wishlist</span>
@@ -263,55 +264,29 @@
 </div>
 <!-- OffCanvas Wishlist End -->
 
-<div id="offcanvas-cart" class="offcanvas offcanvas-cart theme1">
+<div id="offcanvas-cart" class="offcanvas offcanvas-cart theme1" style="overflow: scroll">
     <div class="inner">
         <div class="head d-flex flex-wrap justify-content-between">
             <span class="title">Cart</span>
             <button class="offcanvas-close">×</button>
         </div>
         <ul class="minicart-product-list">
+            @foreach($cards as $product)
             <li>
-                <a href="single-product.html" class="image"
-                ><img src="assets/img/mini-cart/1.png" alt="Cart product Image"
-                    /></a>
+                <a href="single-product.html" class="image">
+                    <img src="{{$product->image}}" alt="Cart product Image"/>
+                </a>
                 <div class="content">
                     <a href="single-product.html" class="title"
-                    >orginal Age Defying Cosmetics Makeup</a
+                    >{{$product->product_name}} {{$product->image}}</a
                     >
                     <span class="quantity-price"
-                    >1 x <span class="amount">$100.00</span></span
+                    >{{$product->quantity}} x <span class="amount">$100.00</span></span
                     >
-                    <a href="#" class="remove">×</a>
+                    <button type="button" wire:click="deleteCard({{$product->id}})" class="remove">×</button>
                 </div>
             </li>
-            <li>
-                <a href="single-product.html" class="image"
-                ><img src="assets/img/mini-cart/2.png" alt="Cart product Image"
-                    /></a>
-                <div class="content">
-                    <a href="single-product.html" class="title"
-                    >On Trend Makeup and Beauty Cosmetics</a
-                    >
-                    <span class="quantity-price"
-                    >1 x <span class="amount">$35.00</span></span
-                    >
-                    <a href="#" class="remove">×</a>
-                </div>
-            </li>
-            <li>
-                <a href="single-product.html" class="image"
-                ><img src="assets/img/mini-cart/3.png" alt="Cart product Image"
-                    /></a>
-                <div class="content">
-                    <a href="single-product.html" class="title"
-                    >orginal Age Defying Cosmetics Makeup</a
-                    >
-                    <span class="quantity-price"
-                    >1 x <span class="amount">$9.00</span></span
-                    >
-                    <a href="#" class="remove">×</a>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <div class="sub-total d-flex flex-wrap justify-content-between">
             <strong>Subtotal :</strong>
@@ -329,4 +304,5 @@
         >
         <p class="minicart-message">Free Shipping on All Orders Over $100!</p>
     </div>
+</div>
 </div>

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use App\Helpers\ProductHelper;
+use App\Helpers\CurrencyConverter;
 
 class Product extends Model
 {
@@ -14,13 +15,7 @@ class Product extends Model
 
     protected $guarded = [];
 
-    protected $appends = [
-        'user_is_favorite',
-        'tax_val_percent',
-        'vat',
-        'pay',
-        'value_added_tax'
-    ];
+    protected $appends = ['user_is_favorite', 'tax_val_percent', 'value_added_tax', 'vat_after_discount', 'pay', 'currency_info'];
 
     protected $hidden =  ['is_favorite'];
 
@@ -41,26 +36,38 @@ class Product extends Model
        return (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
     }
 
-    public function getVatAttribute()
+    public function getVatAfterDiscountAttribute()
     {
+        $converter = new  CurrencyConverter();
         $texPercent =  (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
         $vat = ProductHelper::calcVAT($this->attributes['main_price'], $texPercent);
-        return round($vat, 2);
+//        return round($vat, 2);
+        return round($vat * $converter->currency['value'], 2);
     }
 
     public function getPayAttribute()
     {
+        $converter = new  CurrencyConverter();
         $texPercent =  (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
         $main_price = ProductHelper::calcVAT($this->attributes['main_price'], $texPercent);
         $pay = ProductHelper::calcDiscount($main_price, $this->attributes['discount_percent']);
-        return round($pay, 2);
+//        return round($pay, 2);
+        return round($pay * $converter->currency['value'], 2);
     }
 
     public function getValueAddedTaxAttribute()
     {
+        $converter = new  CurrencyConverter();
         $texPercent  =  (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
         $valueAddTax = ProductHelper::valueAddedTax($this->attributes['main_price'], $texPercent);
-        return round($valueAddTax, 2);
+//        return round($valueAddTax, 2);
+        return round($valueAddTax * $converter->currency['value'], 2);
+    }
+
+    public function getCurrencyInfoAttribute()
+    {
+        $converter = new  CurrencyConverter();
+        return $converter->currency;
     }
 
     public function images()

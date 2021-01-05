@@ -23,7 +23,7 @@ class OffCanvasComponent extends Component
             $this->cards = auth()->user()->cards()
                 ->where('is_published', true)
                 ->orderBy('id', 'DESC')
-                ->get(['id' ,'product_name', 'after_discount', 'quantity', 'image']);
+                ->get();
 
             $this->productFavorites = auth()->user()
                 ->productFavorites()->orderBy('id', 'DESC')->get();

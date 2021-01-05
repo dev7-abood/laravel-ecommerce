@@ -64,20 +64,23 @@
                             </ul>
                         </li>
                         <li>
-                            <a
-                                href="#"
-                                id="dropdown2"
-                                data-toggle="dropdown"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                            >USD $ <i class="ion ion-ios-arrow-down"></i>
-                            </a>
-                            <ul
-                                class="topnav-submenu dropdown-menu"
-                                aria-labelledby="dropdown2"
-                            >
-                                <li class="active"><a href="#">EUR €</a></li>
-                                <li><a href="#">USD $</a></li>
+                            <a href="#" id="dropdown2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USD $ <i class="ion ion-ios-arrow-down"></i></a>
+                            <ul class="topnav-submenu dropdown-menu" aria-labelledby="dropdown2">
+                                <form action="{{route('settings.set.currency')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="currency_type" value="ils">
+                                    <button type="submit" class="p-2 m-1">
+                                        <li class="active" style="color: #5A5AC9">ILS ₪</li>
+                                    </button>
+                                </form>
+
+                                <form action="{{route('settings.set.currency')}}" method="post">
+                                    @csrf
+                                    <input type="hidden" name="currency_type" value="usd">
+                                    <button type="submit" class="p-2 m-1">
+                                        <li style="color: #5A5AC9">USD $</li>
+                                    </button>
+                                </form>
                             </ul>
                         </li>
                         <li class="english">

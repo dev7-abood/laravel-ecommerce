@@ -22,6 +22,12 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
+
+Route::group(['prefix' => 'settings' ,'as' => 'settings.', 'namespace' => 'UserSettings'], function (){
+    Route::post('set-currency', ['as' => 'set.currency', 'uses' => 'CurrencyController@setCurrency']);
+});
+
+
 Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
     Route::get('/', ['as' => 'landingPage', 'uses' => 'IndexController@index']);
 
@@ -42,9 +48,23 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
 use AshAllenDesign\LaravelExchangeRates\Classes\ExchangeRate;
 
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cookie;
+
+//use Illuminate\Support\Facades\Response;
+use Illuminate\Http\Response;
+;
+use Illuminate\Http\Request;
 
 Route::get('test', function (){
 //    return auth()->user()->productFavorites()->orderBy('id', 'DESC')->get();
+
+//   return cookie('abood', 'usd', 4);
+//    response()->withCookie(cookie('abood', 'usd', 4));
+
+//    return Cookie::get('currency_type');
+
+//   $hell = new Response();
+//   return $hell->withCookie(cookie('sss', 'usd'));
 
 
     return App\Models\Product::find(1);

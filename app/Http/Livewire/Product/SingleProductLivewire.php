@@ -3,10 +3,14 @@
 namespace App\Http\Livewire\Product;
 
 use App\Models\Product;
+use Illuminate\Support\Facades\Cookie;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 use App\Models\Card;
+
+use App\Helpers\CurrencyConverter;
+use Illuminate\Http\Response;
 
 class SingleProductLivewire extends Component
 {
@@ -14,19 +18,15 @@ class SingleProductLivewire extends Component
 
     protected $paginationTheme = 'bootstrap';
 
+    protected $listeners = ['store', 'quantity' => 'asQuantity'];
+
     public $slug;
 
     public $product;
+
     public $productProperty;
 
     public $quantity;
-
-    protected $listeners = ['store', 'quantity' => 'asQuantity'];
-
-    public function asQuantity($quantity)
-    {
-        $this->quantity = $quantity;
-    }
 
     public function mount()
     {
@@ -44,6 +44,11 @@ class SingleProductLivewire extends Component
         abort(404);
     }
 
+    public function asQuantity($quantity)
+    {
+        $this->quantity = $quantity;
+    }
+
 
     public $checkbox = [];
     public $property;
@@ -55,6 +60,7 @@ class SingleProductLivewire extends Component
 
     public function store()
     {
+        sleep(3);
 //      $this->validate($this->rules);
         $checkbox = array_filter($this->checkbox, function ($check){
             return $check == true;
@@ -67,19 +73,18 @@ class SingleProductLivewire extends Component
 
         Card::create(
             [
+                'pay'  => $this->product->pay ,
                 'product_name' => $this->product->name,
-                'main_price' => $this->product->main_price,
-                'after_discount' => $this->product->after_discount,
                 'quantity' => $this->quantity,
-                'total_price' => $this->product->after_discount * $this->quantity,
                 'properties' => $property,
-                'tax_val' => $this->product->tax_val,
-                'image' => $this->product->image,
-                'value_added_tax' => $this->product->value_added_tax,
-                'tax_before_increase' => $this->product->tax_before_increase,
-                'is_published' => true,
-                'product_id' => $this->product->id,
-                'user_id' => auth()->id(),
+                'image' => $this->product->image ,
+                'discount_percent' => $this->product->discount_percent ,
+                'tax_val_percent' => $this->product->tax_val_percent ,
+                'value_added_tax' => $this->product->value_added_tax ,
+                'vat_after_discount' => $this->product->vat_after_discount ,
+                'is_published' => true ,
+                'product_id' => $this->product->id ,
+                'user_id' => auth()->id()
             ]
         );
 

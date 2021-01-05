@@ -16,19 +16,20 @@ class CreateCardsTable extends Migration
         Schema::create('cards', function (Blueprint $table) {
             $table->id();
 
+            $table->decimal('pay');
             $table->string('product_name');
-            $table->decimal('main_price');
 
             $table->decimal('total_price');
-            $table->decimal('after_discount');
 
             $table->integer('quantity')->default(1);
             $table->string('properties');
             $table->string('image')->nullable();
 
-            $table->string('tax_val')->nullable();
+            $table->decimal('discount_percent')->nullable();
+            $table->string('tax_val_percent')->nullable();
             $table->string('value_added_tax')->nullable();
-            $table->string('tax_before_increase')->nullable();
+            $table->string('vat_after_discount')->nullable();
+
             $table->boolean('is_published')->default(true);
 
             $table->unsignedBigInteger('product_id')->index()->nullable();

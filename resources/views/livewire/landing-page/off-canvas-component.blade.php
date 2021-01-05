@@ -1,6 +1,4 @@
 <div>
-    <input type="number" wire:model="name">
-    <button wire:click="test">ddd</button>
 <div id="offcanvas-mobile-menu" class="offcanvas theme1 offcanvas-mobile-menu">
     <!-- offcanvas-mobile-menu start -->
     <div class="inner">

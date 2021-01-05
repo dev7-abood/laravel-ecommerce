@@ -43,16 +43,20 @@
                     <div class="product-body mb-40">
                         <div class="d-flex align-items-center mb-30">
                <span class="product-price mr-20">
-                 @if($product->discount)
-                       <del class="del">${{$product->after_discount}}</del>
+                 @if($product->discount_percent != 0)
+                       <del class="del">{{$product->currency_info['currency_icon']}} {{$product->vat_after_discount}}</del>
                    @endif
-                      <span class="onsale">${{$product->value_added_tax}}</span></span>
-                            @if($product->discount)
+                   <span class="onsale" style="font-size: 18px">{{$product->currency_info['currency_icon']}} {{$product->pay}}</span>
+                     <br/>
+                 @if($product->discount_percent != 0)
+                      </span>
                                 <span style="z-index: -1"
-                                    class="badge position-static bg-success rounded-0">Save {{$product->discount}}%</span>
-                            @endif
+                                    class="badge position-static bg-success rounded-0">Save {{$product->discount_percent}}%</span>
                         </div>
-                        {!! $product->desc !!}
+                 @endif
+                        <div style="font-weight: normal">
+                            {!! $product->desc !!}
+                        </div>
                     </div>
                 <form wire:submit.prevent="submitAddToCard">
                     @foreach($productProperty as $property)

@@ -95,7 +95,7 @@
                                         <div
                                             class="d-flex align-items-center justify-content-between"
                                         >
-                                            <span class="product-price">${{$product->after_discount}}</span>
+                                            <span class="product-price">${{$product->pay}}</span>
                                             <button
                                                 class="pro-btn"
                                                 data-toggle="modal"

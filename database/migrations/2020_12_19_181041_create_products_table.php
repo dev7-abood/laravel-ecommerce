@@ -26,6 +26,8 @@ class CreateProductsTable extends Migration
             $table->decimal('discount_percent')->nullable();
             $table->integer('quantity')->nullable();
 
+            $table->boolean('is_published')->default(false);
+
 //            $table->boolean('new')->default(false)->nullable();
 
             $table->unsignedBigInteger('brand_id')->index();

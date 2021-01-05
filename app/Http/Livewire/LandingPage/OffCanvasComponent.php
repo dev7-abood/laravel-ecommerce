@@ -9,26 +9,34 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class OffCanvasComponent extends Component
 {
-
-    protected $listeners = ['refreshCard' => '$refresh'];
-
     use AuthorizesRequests;
 
-    public $cards;
+    protected $listeners = ['refreshCard' => '$refresh', 'refreshFavorite' => '$refresh'];
 
-    public function render()
-    {
-        if (auth()->check()) {
+    public $cards = [];
+
+    public $productFavorites = [];
+
+    public function processingData(){
+        if (auth()->check())
+        {
             $this->cards = auth()->user()->cards()
                 ->where('is_published', true)
                 ->orderBy('id', 'DESC')
-                ->get(['id' ,'product_name', 'after_discount','quantity', 'image']);
-        }else {
-            $this->cards = [];
+                ->get(['id' ,'product_name', 'after_discount', 'quantity', 'image']);
+
+            $this->productFavorites = auth()->user()
+                ->productFavorites()->orderBy('id', 'DESC')->get();
         }
-        return view('livewire.landing-page.off-canvas-component', ['cards' => $this->cards]);
     }
 
+    public function render()
+    {
+        $this->processingData();
+        return view('livewire.landing-page.off-canvas-component',
+            ['cards' => $this->cards, 'productFavorites' => $this->productFavorites]
+        );
+    }
 
     public function deleteCard(Card $card)
     {

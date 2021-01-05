@@ -15,46 +15,52 @@ class Product extends Model
     protected $guarded = [];
 
     protected $appends = [
-        'is_favorite',
-        'after_discount',
-        'tax_val',
-        'value_added_tax',
-        'tax_before_increase'
+        'user_is_favorite',
+        'tax_val_percent',
+        'vat',
+        'pay',
+        'value_added_tax'
     ];
 
-//    protected $hidden =  ['is_favorite'];
+    protected $hidden =  ['is_favorite'];
 
-    protected $casts = [
-        'main_price' => 'float'
-    ];
+    protected $casts =
+        [
+        'main_price'       => 'float',
+        'discount_percent' => 'float',
+        'tax_val_percent'  => 'float'
+        ];
 
-    public function getIsFavoriteAttribute()
+    public function getUserIsFavoriteAttribute()
     {
-      return ProductHelper::isFavorite($this->attributes['id'], 'favorite_products');
+      return ProductHelper::userIsFavorite('favorite_products' ,$this->attributes['id']);
     }
 
-    public function getTaxValAttribute()
+    public function getTaxValPercentAttribute()
     {
-       return (float) ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
+       return (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
     }
 
-    public function getTaxBeforeIncreaseAttribute()
+    public function getVatAttribute()
     {
-        $tax_val = ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
-        $after_discount = ProductHelper::getAfterDiscount($this->attributes['main_price'], $this->attributes['discount']);
-        return round(($after_discount * ($tax_val / 100)), 2);
+        $texPercent =  (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
+        $vat = ProductHelper::calcVAT($this->attributes['main_price'], $texPercent);
+        return round($vat, 2);
+    }
+
+    public function getPayAttribute()
+    {
+        $texPercent =  (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
+        $main_price = ProductHelper::calcVAT($this->attributes['main_price'], $texPercent);
+        $pay = ProductHelper::calcDiscount($main_price, $this->attributes['discount_percent']);
+        return round($pay, 2);
     }
 
     public function getValueAddedTaxAttribute()
     {
-        $tax_val = (float) ProductHelper::getTaxVal($this->attributes['tax_id'], 'taxes');
-        $after_discount = (float) ProductHelper::getAfterDiscount($this->attributes['main_price'], $this->attributes['discount']);
-        return round(($after_discount + ($after_discount * ($tax_val / 100))), 2);
-    }
-
-    public function getAfterDiscountAttribute()
-    {
-       return round(ProductHelper::getAfterDiscount($this->attributes['main_price'], $this->attributes['discount']),2);
+        $texPercent  =  (float) ProductHelper::getTaxVal('taxes', $this->attributes['tax_id']);
+        $valueAddTax = ProductHelper::valueAddedTax($this->attributes['main_price'], $texPercent);
+        return round($valueAddTax, 2);
     }
 
     public function images()

@@ -7,18 +7,24 @@ use Livewire\Component;
 class HeaderMiddleComponent extends Component
 {
 
-    public $cardCount;
+    public $cardCount = 0;
+    public $favoriteCount = 0;
 
-    protected $listeners = ['refreshCard' => '$refresh'];
+    protected $listeners = ['refreshCard' => '$refresh' , 'refreshFavorite' => '$refresh'];
+
+    public function processingData()
+    {
+        if (auth()->check()) {
+            $this->cardCount     = auth()->user()->cards()->where('is_published', true)->count();
+            $this->favoriteCount =  auth()->user()->productFavorites()->count();
+        }
+    }
 
     public function render()
     {
-        if (auth()->check()) {
-            $this->cardCount = auth()->user()->cards()->where('is_published', true)->count();
-        } else{
-          $this->cardCount = 0;
-      }
-
-        return view('livewire.landing-page.header-middle-component', ['cardCount' => $this->cardCount]);
+        $this->processingData();
+        return view('livewire.landing-page.header-middle-component',
+            ['cardCount' => $this->cardCount, 'favoriteCount' => $this->favoriteCount]
+        );
     }
 }

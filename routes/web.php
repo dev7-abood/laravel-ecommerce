@@ -39,12 +39,21 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
 
 });
 
+use AshAllenDesign\LaravelExchangeRates\Classes\ExchangeRate;
+
+use Illuminate\Support\Facades\Http;
+
+Route::get('test', function (){
+//    return auth()->user()->productFavorites()->orderBy('id', 'DESC')->get();
 
 
-use App\Models\User;
-use App\Models\Product;
-use App\Models\ProductCategory;
+    return App\Models\Product::find(1);
 
-Route::get('test/{card}', function (Card $card){
-    return $card;
+//  return  Http::get('https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=522c84b6bbae6aa09ac2')['USD_ILS'];
+
+//$fuck =  new ExchangeRate();
+//return  $result = $fuck->convert(100, 'USD', 'ILS', Carbon\Carbon::now());
+//
+//    return \App\Models\Product::find(1);
+
 });

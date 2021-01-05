@@ -42,19 +42,16 @@
                     </div>
                     <div class="product-body mb-40">
                         <div class="d-flex align-items-center mb-30">
-
-
                <span class="product-price mr-20">
                  @if($product->discount)
-                       <del class="del">${{$product->main_price}}</del>
+                       <del class="del">${{$product->after_discount}}</del>
                    @endif
-                      <span class="onsale">${{$product->after_discount}}</span></span>
+                      <span class="onsale">${{$product->value_added_tax}}</span></span>
                             @if($product->discount)
                                 <span style="z-index: -1"
                                     class="badge position-static bg-success rounded-0">Save {{$product->discount}}%</span>
                             @endif
                         </div>
-
                         {!! $product->desc !!}
                     </div>
                 <form wire:submit.prevent="submitAddToCard">
@@ -111,9 +108,9 @@
                                         </button>
                                     </div>
                                 </div>
-                            </div>
+
                 </form>
-                                <div class="addto-whish-list">
+                <div class="addto-whish-list">
                                     <a href="#"><i class="icon-heart"></i> Add to wishlist</a>
 {{--                                    <a href="#"><i class="icon-shuffle"></i> Add to compare</a>--}}
                                 </div>
@@ -135,9 +132,9 @@
                                     </ul>
                                 </div>
                             </div>
+            </div>
                 </div>
             </div>
-        </div>
 </section>
 
 

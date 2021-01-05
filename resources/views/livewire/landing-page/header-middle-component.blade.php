@@ -100,7 +100,7 @@
                                 <a class="offcanvas-toggle" href="#offcanvas-wishlist">
                     <span class="position-relative">
                       <i class="icon-heart"></i>
-                      <span class="badge cbdg1">3</span>
+                      <span class="badge cbdg1">{{$favoriteCount}}</span>
                     </span>
                                 </a>
                             </li>

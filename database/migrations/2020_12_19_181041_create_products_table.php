@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->text('desc');
 
             $table->decimal('main_price');
-            $table->decimal('discount')->nullable();
+            $table->decimal('discount_percent')->nullable();
             $table->integer('quantity')->nullable();
 
 //            $table->boolean('new')->default(false)->nullable();

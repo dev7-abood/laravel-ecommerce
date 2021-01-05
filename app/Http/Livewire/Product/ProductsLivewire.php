@@ -33,6 +33,8 @@ class ProductsLivewire extends Component
         $this->dispatchBrowserEvent('addToFavorite', [
               'uuid' => $uuid,
         ]);
+
+        $this->emit('refreshFavorite');
     }
 
     public function render()
@@ -41,8 +43,7 @@ class ProductsLivewire extends Component
        $products   = ProductCategory::where('slug', $this->slug)->first()->makeVisible(['is_favorite'])->products()->paginate(6);
        $productCat = ProductCategory::where('slug', $this->slug)->first();
 
-       if ($products)
-       {
+       if ($products) {
            return view('livewire.product.products-livewire', ['products' => $products, 'productCat' => $productCat]);
        }
        abort(404);

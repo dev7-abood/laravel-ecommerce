@@ -129,6 +129,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-permission" />
       <path value="$PROJECT_DIR$/vendor/inertiajs/inertia-laravel" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/ashallendesign/laravel-exchange-rates" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration">

@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="743bb3ec-7b2d-4d27-ab6f-b203515cdbe7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/LandingPage/OffCanvasComponent.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/LandingPage/OffCanvasComponent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/CurrencyConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/CurrencyConverter.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProductLivewire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProductLivewire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_181041_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_181041_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_193549_create_cards_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_193549_create_cards_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/landing-page/header-top-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/landing-page/header-top-component.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/landing-page/off-canvas-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/landing-page/off-canvas-component.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/products-livewire.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/products-livewire.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -213,7 +206,8 @@
       <workItem from="1609713150646" duration="10181000" />
       <workItem from="1609756645995" duration="27472000" />
       <workItem from="1609845696775" duration="1025000" />
-      <workItem from="1609847319042" duration="33929000" />
+      <workItem from="1609847319042" duration="36457000" />
+      <workItem from="1609933665260" duration="13001000" />
     </task>
     <servers />
   </component>
@@ -240,8 +234,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php</url>
+          <line>91</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

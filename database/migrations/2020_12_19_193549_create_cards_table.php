@@ -22,7 +22,7 @@ class CreateCardsTable extends Migration
             $table->decimal('total_price');
 
             $table->integer('quantity')->default(1);
-            $table->string('properties');
+            $table->json('properties');
             $table->string('image')->nullable();
 
             $table->decimal('discount_percent')->nullable();

@@ -17,7 +17,7 @@ class Product extends Model
 
     protected $appends = ['user_is_favorite', 'tax_val_percent', 'value_added_tax', 'vat_after_discount', 'pay', 'currency_info'];
 
-    protected $hidden =  ['is_favorite'];
+//    protected $hidden =  ['is_favorite'];
 
     protected $casts =
         [

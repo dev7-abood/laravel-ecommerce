@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Http;
 
 
-class CurrencyConverter{
+class CurrencyConverter
+{
 
     protected $api = 'https://free.currconv.com/api/v7/';
 
@@ -28,22 +29,22 @@ class CurrencyConverter{
 
     public function usdToIls(): array
     {
-        try{
-            $USDtoILS = Http::get($this->api.'convert?q=USD_ILS&compact=ultra&apiKey='.env('CURRCONV_KEY'))['USD_ILS'];
-            return  [
+        try {
+            $USDtoILS = Http::get($this->api . 'convert?q=USD_ILS&compact=ultra&apiKey=' . env('CURRCONV_KEY'))['USD_ILS'];
+            return [
                 'value' => $USDtoILS,
                 'currency_icon' => '₪',
                 'currency_type' => 'ILS'
             ];
-        }catch (\ErrorException $errorException) {
-           return $this->defaultCurrency();
+        } catch (\ErrorException $errorException) {
+            return $this->defaultCurrency();
         }
     }
 
-    public function defaultCurrency() : array
+    public function defaultCurrency(): array
     {
-        return  [
-            'value' => (float) 1.00,
+        return [
+            'value' => (float)1.00,
             'currency_icon' => '$',
             'currency_type' => 'USD'
         ];

@@ -3,14 +3,11 @@
 namespace App\Http\Livewire\Product;
 
 use App\Models\Product;
-use Illuminate\Support\Facades\Cookie;
 use Livewire\Component;
 use Livewire\WithPagination;
 
 use App\Models\Card;
 
-use App\Helpers\CurrencyConverter;
-use Illuminate\Http\Response;
 
 class SingleProductLivewire extends Component
 {
@@ -21,11 +18,8 @@ class SingleProductLivewire extends Component
     protected $listeners = ['store', 'quantity' => 'asQuantity'];
 
     public $slug;
-
     public $product;
-
     public $productProperty;
-
     public $quantity;
 
     public function mount()
@@ -49,9 +43,10 @@ class SingleProductLivewire extends Component
         $this->quantity = $quantity;
     }
 
-
     public $checkbox = [];
-    public $property;
+    public $select;
+    public $checkboxPropertyName;
+    public $selectPropertyName;
 
     protected $rules = [
         'quantity' => 'required|max:2',
@@ -60,40 +55,50 @@ class SingleProductLivewire extends Component
 
     public function store()
     {
-        sleep(3);
-//      $this->validate($this->rules);
-        $checkbox = array_filter($this->checkbox, function ($check){
+        // $this->validate($this->rules);
+        //sleep(3);
+        $property = [];
+        foreach ($this->productProperty as $pro) {
+            if ($pro['type'] == 'checkbox') {
+                $this->checkboxPropertyName = $pro['p_property_name'];
+            }
+        }
+        $checkbox = array_filter($this->checkbox, function ($check) {
             return $check == true;
         });
-        $property = '';
-        foreach (array_keys($checkbox) as $pro){
-            $property .= $pro;
+        foreach (array_keys($checkbox) as $pro) {
+            $property[$this->checkboxPropertyName][] = $pro;
         }
-        $property .= $this->property;
+        foreach ($this->productProperty as $pro) {
+            if ($pro['type'] == 'select') {
+                $this->selectPropertyName = $pro['p_property_name'];
+            }
+        }
+        $property[$this->selectPropertyName][] = $this->select;
 
         Card::create(
             [
-                'pay'  => $this->product->pay ,
+                'pay' => $this->product->pay,
                 'product_name' => $this->product->name,
                 'quantity' => $this->quantity,
-                'properties' => $property,
-                'image' => $this->product->image ,
-                'discount_percent' => $this->product->discount_percent ,
-                'tax_val_percent' => $this->product->tax_val_percent ,
-                'value_added_tax' => $this->product->value_added_tax ,
-                'vat_after_discount' => $this->product->vat_after_discount ,
-                'is_published' => true ,
-                'product_id' => $this->product->id ,
+                'properties' => json_encode($property),
+                'image' => $this->product->image,
+                'discount_percent' => $this->product->discount_percent,
+                'tax_val_percent' => $this->product->tax_val_percent,
+                'value_added_tax' => $this->product->value_added_tax,
+                'vat_after_discount' => $this->product->vat_after_discount,
+                'is_published' => true,
+                'product_id' => $this->product->id,
                 'user_id' => auth()->id()
             ]
         );
 
-      $this->dispatchBrowserEvent('swal', [
-           'title' => __('products.added_to_card', ['product_name' => $this->product->name ]),
-           'timer'=>3000,
-           'icon'=>'success',
-           'toast'=>true,
-           'position'=>'top-right'
+        $this->dispatchBrowserEvent('swal', [
+            'title' => __('products.added_to_card', ['product_name' => $this->product->name]),
+            'timer' => 3000,
+            'icon' => 'success',
+            'toast' => true,
+            'position' => 'top-right'
         ]);
 
         $this->emit('refreshCard');
@@ -102,11 +107,10 @@ class SingleProductLivewire extends Component
     public function submitAddToCard()
     {
         $cardIsExist = Card::where('product_name', $this->product->name)->first();
-        if ($cardIsExist)
-        {
+        if ($cardIsExist) {
             $this->dispatchBrowserEvent('conform_product_exist_or_not');
             $this->emit('refreshCard');
-        }else{
+        } else {
             $this->store();
         }
     }

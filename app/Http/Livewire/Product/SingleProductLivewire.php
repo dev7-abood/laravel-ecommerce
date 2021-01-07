@@ -53,35 +53,42 @@ class SingleProductLivewire extends Component
         'property' => 'required',
     ];
 
+
+
     public function store()
     {
+
         // $this->validate($this->rules);
-        //sleep(3);
-        $property = [];
-        foreach ($this->productProperty as $pro) {
-            if ($pro['type'] == 'checkbox') {
-                $this->checkboxPropertyName = $pro['p_property_name'];
+
+        if (!empty($this->productProperty)) {
+            $property = [];
+            foreach ($this->productProperty as $pro) {
+                if ($pro['type'] == 'checkbox') {
+                    $this->checkboxPropertyName = $pro['p_property_name'];
+                }
             }
-        }
-        $checkbox = array_filter($this->checkbox, function ($check) {
-            return $check == true;
-        });
-        foreach (array_keys($checkbox) as $pro) {
-            $property[$this->checkboxPropertyName][] = $pro;
-        }
-        foreach ($this->productProperty as $pro) {
-            if ($pro['type'] == 'select') {
-                $this->selectPropertyName = $pro['p_property_name'];
+            $checkbox = array_filter($this->checkbox, function ($check) {
+                return $check == true;
+            });
+            foreach (array_keys($checkbox) as $pro) {
+                $property[$this->checkboxPropertyName][] = $pro;
             }
+            foreach ($this->productProperty as $pro) {
+                if ($pro['type'] == 'select') {
+                    $this->selectPropertyName = $pro['p_property_name'];
+                }
+            }
+            $property[$this->selectPropertyName][] = $this->select;
+        } else {
+            $property = null;
         }
-        $property[$this->selectPropertyName][] = $this->select;
 
         Card::create(
             [
                 'pay' => $this->product->pay,
                 'product_name' => $this->product->name,
                 'quantity' => $this->quantity,
-                'properties' => json_encode($property),
+                'properties' =>  ($property == null) ? null : json_encode($property),
                 'image' => $this->product->image,
                 'discount_percent' => $this->product->discount_percent,
                 'tax_val_percent' => $this->product->tax_val_percent,
@@ -89,7 +96,8 @@ class SingleProductLivewire extends Component
                 'vat_after_discount' => $this->product->vat_after_discount,
                 'is_published' => true,
                 'product_id' => $this->product->id,
-                'user_id' => auth()->id()
+                'currency_type' => $this->product->currency_info['currency_type'],
+                'user_id' => auth()->id(),
             ]
         );
 
@@ -106,7 +114,7 @@ class SingleProductLivewire extends Component
 
     public function submitAddToCard()
     {
-        $cardIsExist = Card::where('product_name', $this->product->name)->first();
+        $cardIsExist = Card::where('product_name', $this->product->name)->where('user_id', auth()->id())->first();
         if ($cardIsExist) {
             $this->dispatchBrowserEvent('conform_product_exist_or_not');
             $this->emit('refreshCard');

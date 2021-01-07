@@ -22,13 +22,15 @@ class CreateCardsTable extends Migration
             $table->decimal('total_price');
 
             $table->integer('quantity')->default(1);
-            $table->json('properties');
+            $table->json('properties')->nullable();
             $table->string('image')->nullable();
 
             $table->decimal('discount_percent')->nullable();
             $table->string('tax_val_percent')->nullable();
             $table->string('value_added_tax')->nullable();
             $table->string('vat_after_discount')->nullable();
+
+            $table->string('currency_type');
 
             $table->boolean('is_published')->default(true);
 

@@ -61,15 +61,20 @@ Route::get('test', function (){
 
 //   return cookie('abood', 'usd', 4);
 //    response()->withCookie(cookie('abood', 'usd', 4));
-        $property = Product::where('slug', 'j-7')->first()->productPropertyNames->toArray();
+//        $property = Product::where('slug', 'j-7')->first()->productPropertyNames->toArray();
+
+//
+//        foreach ($property as $pro)
+//        {
+//            if ($pro['type'] == 'checkbox'){
+//              return  $pro['p_property_name'];
+//            }
+//        }
 
 
-        foreach ($property as $pro)
-        {
-            if ($pro['type'] == 'checkbox'){
-              return  $pro['p_property_name'];
-            }
-        }
+    $number = round(3.60, 1);
+
+    return (int) $number;
 
 //    return Cookie::get('currency_type');
 

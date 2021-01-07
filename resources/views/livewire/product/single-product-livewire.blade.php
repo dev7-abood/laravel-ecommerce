@@ -35,11 +35,27 @@
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
                             <span class="star-on"><i class="ion-ios-star"></i> </span>
-                            <span class="star-on"><i class="ion-ios-star"></i> </span>
-                            {{--                            <a href="#" id="write-comment"><span class="ml-2"><i class="far fa-comment-dots"></i></span>--}}
-                            {{--                                Read reviews <span>(1)</span></a>--}}
-                            {{--                            <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="edite"><i class="far fa-edit"></i></span> Write a--}}
-                            {{--                                review</a>--}}
+                            <span class=""><i class="ion-ios-star"></i> </span>
+
+{{--                            <ul class="rate-area">--}}
+{{--                                <input type="radio" id="5-star" name="crating" value="5">--}}
+{{--                                <label for="5-star" title="Amazing">5 stars</label>--}}
+{{--                                <input type="radio" id="4-star" name="crating" value="4">--}}
+{{--                                <label for="4-star" title="Good">4 stars</label>--}}
+{{--                                <input type="radio" id="3-star" name="crating" value="3">--}}
+{{--                                <label for="3-star" title="Average">3 stars</label>--}}
+{{--                                <input type="radio" id="2-star" name="crating" value="2">--}}
+{{--                                <label for="2-star" title="Not Good">2 stars</label>--}}
+{{--                                <input type="radio" id="1-star" required=""--}}
+{{--                                       name="crating" value="1" aria-required="true">--}}
+{{--                                <label for="1-star" title="Bad">1 star</label>--}}
+{{--                            </ul>--}}
+
+                            <a href="#" id="write-comment"><span class="ml-2"><i class="fas fa-star-half-alt"></i></span>
+                                Rate</a>
+                            <span>&nbsp;&nbsp;</span>
+                               <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><span class="edite"><i class="far fa-edit"></i></span> Write a
+                             review</a>
                         </div>
                     </div>
                     <div class="product-body mb-40">
@@ -123,7 +139,6 @@
                                                     disabled>
                                                 <span class="spinner-border spinner-border-sm" role="status"
                                                       aria-hidden="true"></span>
-                                                Adding to card...
                                             </button>
 
                                         </div>
@@ -159,7 +174,6 @@
 
 @section('script')
     <script>
-
         function increment() {
             let quantity = document.getElementById('quantity').value;
             if (parseInt(quantity) <= 9) {
@@ -179,7 +193,6 @@
             }
 
         }
-
         window.addEventListener('conform_product_exist_or_not', e => {
             Swal.fire({
                 title: 'The product in the card do you want to add the same product to card?',
@@ -190,7 +203,6 @@
                     confirmButton: 'bg-success' //insert class here
                 }
             }).then((result) => {
-                console.log(result)
                 /* Read more about isConfirmed, isDenied below */
                 if (result.isConfirmed) {
                     livewire.emit('store')
@@ -199,7 +211,6 @@
                 }
             })
         })
-
     </script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script>
@@ -208,32 +219,21 @@
             slidesToShow: 3,
             slidesToScroll: 3,
             arrows: true,
-            prevArrow: `<div class="d-flex justify-content-center">
-<button style="width: 100%;background-color: #5A5AC9;color: white;border-radius: 50%" ><i class="fas fa-arrow-left"></i></button>
-</div>
-`,
-            // nextArrow: `<button hidden></button>`,
-            nextArrow: `<div class="d-flex justify-content-between" style="position: absolute;right: 0">
-<button  style="width: 100%;background-color: #5A5AC9;color: white;border-radius: 50%" ><i class="fas fa-arrow-right"></i></button>
-</div>`,
+            prevArrow: `<div class="d-flex justify-content-center"><button style="width: 100%;background-color: #5A5AC9;color: white;border-radius: 50%" ><i class="fas fa-arrow-left"></i></button></div>`,
+            nextArrow: `<div class="d-flex justify-content-between" style="position: absolute;right: 0"><button  style="width: 100%;background-color: #5A5AC9;color: white;border-radius: 50%" ><i class="fas fa-arrow-right"></i></button></div>`,
         });
         document.getElementById('prevArrowEdit').classList.remove("slick-arrow");
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js"
-            integrity="sha512-UH428GPLVbCa8xDVooDWXytY8WASfzVv3kxCvTAFkxD2vPjouf1I3+RJ2QcSckESsb7sI+gv3yhsgw9ZhM7sDw=="
-            crossorigin="anonymous" data-turbolinks-track="reload"></script>
-    <script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js" integrity="sha512-UH428GPLVbCa8xDVooDWXytY8WASfzVv3kxCvTAFkxD2vPjouf1I3+RJ2QcSckESsb7sI+gv3yhsgw9ZhM7sDw==" crossorigin="anonymous" data-turbolinks-track="reload"></script><script>
         function changMinImage(e) {
-            let getSlideImage = e
-            document.getElementById('main-img').setAttribute('src', getSlideImage.src)
-            $('#main-img').data('zoom-image', e.src).elevateZoom({cursor: "crosshair", scrollZoom: true});
-
+            let getSlideImage = e.src
+            document.getElementById('main-img').setAttribute('src', getSlideImage)
+            $('#main-img').data('zoom-image', getSlideImage).elevateZoom({cursor: "crosshair", scrollZoom: true});
         }
-
         $(`#main-img`).elevateZoom({cursor: "crosshair", scrollZoom: true});
     </script>
-
 @endsection
 @section('style')
+    <link rel="stylesheet" href="/main/assets/css/rating.css"/>
     <meta name="turbolinks-visit-control" content="reload">
 @endsection

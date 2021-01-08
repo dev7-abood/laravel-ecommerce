@@ -1,7 +1,5 @@
 <?php
 
-use App\Models\Card;
-use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,56 +44,7 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
 
 });
 
-use AshAllenDesign\LaravelExchangeRates\Classes\ExchangeRate;
-
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Cookie;
-
-//use Illuminate\Support\Facades\Response;
-use Illuminate\Http\Response;
-;
-use Illuminate\Http\Request;
-
-Route::get('test', function (){
-//    return auth()->user()->productFavorites()->orderBy('id', 'DESC')->get();
-
-//   return cookie('abood', 'usd', 4);
-//    response()->withCookie(cookie('abood', 'usd', 4));
-//        $property = Product::where('slug', 'j-7')->first()->productPropertyNames->toArray();
-
-//
-//        foreach ($property as $pro)
-//        {
-//            if ($pro['type'] == 'checkbox'){
-//              return  $pro['p_property_name'];
-//            }
-//        }
-
-
-    $number = round(3.60, 1);
-
-    return (int) $number;
-
-//    return Cookie::get('currency_type');
-
-
-
-//   $hell = new Response();
-//   return $hell->withCookie(cookie('sss', 'usd'));
-
-
-//    return App\Models\Product::find(1);
-
-    $array = ['color' => ['red', 'green']];
-
-    echo json_encode($array);
-
-
-//  return  Http::get('https://free.currconv.com/api/v7/convert?q=USD_ILS&compact=ultra&apiKey=522c84b6bbae6aa09ac2')['USD_ILS'];
-
-//$fuck =  new ExchangeRate();
-//return  $result = $fuck->convert(100, 'USD', 'ILS', Carbon\Carbon::now());
-//
-//    return \App\Models\Product::find(1);
-
+use App\Models\Product;
+Route::get('/test', function (){
+  return  Product::where('is_published', true)->orderBy('updated_at', 'DESC')->paginate(10);
 });

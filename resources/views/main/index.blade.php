@@ -2,56 +2,28 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <x-landing-page.head-component/>
 <body>
-<!-- offcanvas-overlay start -->
 <div class="offcanvas-overlay"></div>
-<!-- offcanvas-overlay end -->
-<!-- OffCanvas Cart Start -->
 <livewire:landing-page.off-canvas-component/>
-<!-- OffCanvas Cart End -->
-<!-- header start -->
 <header>
-    <!-- header top start -->
     <livewire:landing-page.header-top-component/>
-    <!-- header top end -->
-    <!-- header-middle satrt -->
     <livewire:landing-page.header-middle-component/>
-    <!-- header-middle end -->
 </header>
-<!-- header end -->
 @if(Request::is('/'))
-<!-- main slider start -->
 <x-landing-page.slider-component/>
-<!-- main slider end -->
-<!-- static media start -->
-<x-landing-page.statics-component/>
-<!-- static media end -->
-<!-- common banner  start -->
-{{--<x-landing-page.common-banner-one-component/>--}}
-{{--<!-- common banner  end -->--}}
-{{--<!-- ProductHelper tab start -->--}}
-{{--<x-landing-page.product-top-component/>--}}
-{{--<!-- ProductHelper tab end -->--}}
-{{--<!-- common banner  start -->--}}
-{{--<x-landing-page.common-banner-tow-component/>--}}
-<!-- common banner  end -->
-<!-- ProductHelper tab repetition start -->
-{{--<x-landing-page.single-product-product-tab-repetition-component/>--}}
-<!-- ProductHelper tab repetition end -->
-<!-- blog-section start -->
-<!-- blog-section end -->
-<!-- brand slider start -->
 <x-landing-page.brand-component/>
+<livewire:landing-page.list-products-livewire/>
 @endif
-<!-- brand slider end -->
 @yield('container')
-<!-- footer strat -->
-<x-landing-page.footer-component/>
-<!-- footer end -->
+<div id="footerDisplay" style="display: none">
+    <x-landing-page.footer-component/>
+</div>
 <livewire:landing-page.models-middle-component/>
 <x-landing-page.script-component/>
 @livewireScripts
 <script src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/elevatezoom/2.2.3/jquery.elevatezoom.min.js" integrity="sha512-UH428GPLVbCa8xDVooDWXytY8WASfzVv3kxCvTAFkxD2vPjouf1I3+RJ2QcSckESsb7sI+gv3yhsgw9ZhM7sDw==" crossorigin="anonymous" data-turbolinks-track="reload"></script>
 @yield('script')
 </body>
 </html>

@@ -103,6 +103,11 @@ class Product extends Model
         return $this->hasMany(ProductPropertyName::class)->with('productPropertyValues');
     }
 
+    public function ratingProducts()
+    {
+        return $this->hasMany(ProductRating::class);
+    }
+
 /*
     protected static function boot()
     {

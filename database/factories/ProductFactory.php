@@ -31,16 +31,17 @@ class ProductFactory extends Factory
         $name = $this->faker->name.Str::random(4);
         return [
             'uuid' => $this->faker->uuid,
-            'name' => $name,
+            'name' => $name.Str::random(4),
             'desc' => $this->faker->sentence,
             'main_price' => $this->faker->numberBetween(4,400),
-            'discount' => $this->faker->numberBetween(4,8),
+            'discount_percent' => $this->faker->numberBetween(4,8),
             'quantity' => $this->faker->numberBetween(4,8),
             'video' => $this->faker->url,
-            'image' => $this->faker->imageUrl(),
+            'image' => '/images/test.jpg',
             'brand_id' => Brand::factory(),
             'p_category_id' => ProductCategory::factory(),
-            'tax_id' => Tax::factory()
+//            'tax_id' => Tax::factory(),
+            'is_published' => true
         ];
     }
 }

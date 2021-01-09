@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="743bb3ec-7b2d-4d27-ab6f-b203515cdbe7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/blade.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ecommerce.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ecommerce.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-idea.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProductLivewire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Product/SingleProductLivewire.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Helpers/CurrencyConverter.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/CurrencyConverter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/LandingPage/ListProductsLivewire.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/LandingPage/ListProductsLivewire.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/LandingPage/CommonBannerComponent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/LandingPage/CommonBannerTowComponent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/LandingPage/ProductTopComponent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/View/Components/LandingPage/StaticsComponent.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ProductFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ProductFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/main/assets/css/rating.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/main/assets/css/rating.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/landing-page/common-banner-one-component.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/landing-page/common-banner-tow-component.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/landing-page/product-top-component.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/landing-page/statics-component.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/product/single-product-livewire.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/main/assets/php/contact.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/landing-page/head-component.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/landing-page/head-component.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/landing-page/list-products-livewire.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/landing-page/list-products-livewire.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/main/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -39,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JavaScript File" />
         <option value="CSS File" />
       </list>
     </option>
@@ -243,7 +229,8 @@
       <workItem from="1610072483287" duration="29000" />
       <workItem from="1610072624077" duration="9000" />
       <workItem from="1610072668303" duration="207000" />
-      <workItem from="1610112322725" duration="27999000" />
+      <workItem from="1610112322725" duration="29161000" />
+      <workItem from="1610197145800" duration="27185000" />
     </task>
     <servers />
   </component>
@@ -267,6 +254,16 @@
           <url>file://$PROJECT_DIR$/resources/views/livewire/landing-page/off-canvas-component.blade.php</url>
           <line>250</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/components/landing-page/head-component.blade.php</url>
+          <line>7</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/components/landing-page/head-component.blade.php</url>
+          <line>8</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

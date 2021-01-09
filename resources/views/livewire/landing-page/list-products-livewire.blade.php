@@ -1,4 +1,5 @@
 <div>
+
     <div class="container tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
             <div class="row grid-view theme1 mb-10" id="card">
@@ -9,7 +10,7 @@
                             <div class="product-thumbnail position-relative">
                                 <span class="badge badge-danger top-right">New</span>
                                 <a href="single-product.html">
-                                    <img class="first-img" src="assets/img/product/1.png" alt="thumbnail">
+                                    <img class="first-img" src="{{$product->image}}" alt="thumbnail">
                                 </a>
                                 <!-- product links -->
                                 <ul class="actions d-flex justify-content-center">
@@ -17,11 +18,6 @@
                                         <a class="action" href="wishlist.html">
                         <span data-toggle="tooltip" data-placement="bottom" title="" class="icon-heart" data-original-title="add to wishlist">
                         </span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a class="action" href="#" data-toggle="modal" data-target="#compare">
-                                            <span data-toggle="tooltip" data-placement="bottom" title="" class="icon-shuffle" data-original-title="Add to compare"></span>
                                         </a>
                                     </li>
                                     <li>
@@ -34,17 +30,16 @@
                             </div>
                             <div class="product-desc py-0 px-0">
                                 <h3 class="title">
-                                    <a href="shop-grid-4-column.html">All Natural Makeup Beauty Cosmetics</a>
+                                    <a href="shop-grid-4-column.html">{{$product->name}}</a>
                                 </h3>
                                 <div class="star-rating">
-                                    <span class="ion-ios-star"></span>
-                                    <span class="ion-ios-star"></span>
-                                    <span class="ion-ios-star"></span>
-                                    <span class="ion-ios-star"></span>
-                                    <span class="ion-ios-star de-selected"></span>
+                                    {!! str_repeat('<span class="star-on"><i class="ion-ios-star"></i> </span>', (int) $this->productRating($product->id)) !!}
+                                    @if($this->productRating($product->id) != 0)
+                                    {!! str_repeat('<span class="text-dark"><i class="ion-ios-star"></i> </span>',  (5 -  (int) $this->productRating($product->id))) !!}
+                                    @endif
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <span class="product-price">$11.90</span>
+                                    <span class="product-price">{{$currency['currency_icon'].' '.round($currency['value'] * $product->pay, 2)}}</span>
                                     <button class="pro-btn" data-toggle="modal" data-target="#add-to-cart">
                                         <i class="icon-basket"></i>
                                     </button>
@@ -61,10 +56,7 @@
        <div class="spinner-border" id="spinner-border" role="status">
          <span class="sr-only">Loading...</span>
     </div>
-{{--        <x-landing-page.footer-component/>--}}
-
     @section('script')
-{{--        lastChild.dataset.productNumber--}}
         <script>
             window.onscroll = function (ev) {
                 let productNumber = document.getElementById('card').lastElementChild.dataset.productNumber;

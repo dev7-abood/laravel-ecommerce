@@ -45,6 +45,9 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
 });
 
 use App\Models\Product;
+use App\Http\Resources\ListProductsResource;
 Route::get('/test', function (){
-  return  Product::where('is_published', true)->orderBy('updated_at', 'DESC')->paginate(10);
+//    return \App\Models\Product::all();
+
+    return \App\Models\Product::all();
 });

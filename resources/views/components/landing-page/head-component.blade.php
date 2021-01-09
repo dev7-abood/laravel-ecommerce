@@ -4,28 +4,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <meta name="description" content="" />
     <title>Looki - Beauty & Cosmetics eCommerce Bootstrap 5 Template</title>
-    <!-- Favicon -->
+
+    <link href="/main/assets/css/loader.css" rel="stylesheet" type="text/css" />
+    <script src="/main/assets/js/loader.js"></script>
+
     <link rel="shortcut icon" type="image/x-icon" href="/main/assets/img/favicon.ico" />
 
-    <!--**********************************
-        all css files
-    *************************************-->
+    <link rel="stylesheet" href="/main/assets/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="/main/assets/css/ionicons.min.css"/>
+    <link rel="stylesheet" href="/main/assets/css/simple-line-icons.css"/>
 
-    <!--***************************************************
-       fontawesome,bootstrap,plugins and main style css
-     ***************************************************-->
-    <!-- cdn links -->
+    <link rel="stylesheet" href="/main/assets/css/plugins/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="/main/assets/css/bootstrap.min.css"/>
 
-    <link rel="stylesheet" href="/main/assets/css/fontawesome.min.css" data-turbolinks-track="reload"/>
-    <link rel="stylesheet" href="/main/assets/css/ionicons.min.css"  data-turbolinks-track="reload"/>
-    <link rel="stylesheet" href="/main/assets/css/simple-line-icons.css"  data-turbolinks-track="reload"/>
-
-    <link rel="stylesheet" href="/main/assets/css/plugins/jquery-ui.min.css" data-turbolinks-track="reload"/>
-    <link rel="stylesheet" href="/main/assets/css/bootstrap.min.css" data-turbolinks-track="reload"/>
-
-    <link rel="stylesheet" href="/main/assets/css/plugins/plugins.css" data-turbolinks-track="reload"/>
-    <link rel="stylesheet" href="/main/assets/css/plugins/aos.css"  data-turbolinks-track="reload"/>
-    <link rel="stylesheet" href="/main/assets/css/style.min.css" data-turbolinks-track="reload"/>
+    <link rel="stylesheet" href="/main/assets/css/plugins/plugins.css"/>
+    <link rel="stylesheet" href="/main/assets/css/plugins/aos.css"/>
+    <link rel="stylesheet" href="/main/assets/css/style.min.css"/>
 
 
     <style>
@@ -39,15 +33,6 @@
 
     @yield('style')
 {{--    <meta name="turbolinks-cache-control" content="no-cache">--}}
-    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-
-    <!--****************************
-         Minified  css
-    ****************************-->
-
-    <!--***********************************************
-       vendor min css,plugins min css,style min css
-     ***********************************************-->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css" />
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css" />
     <link rel="stylesheet" href="assets/css/style.min.css" /> -->

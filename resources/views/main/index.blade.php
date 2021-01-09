@@ -2,7 +2,11 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <x-landing-page.head-component/>
 <body>
+@if(Request::is('/'))
+<div id="load_screen"><div class="loader"><div class="loader-content">
+            <div class="spinner-grow align-self-center"></div></div></div></div>
 <div class="offcanvas-overlay"></div>
+@endif
 <livewire:landing-page.off-canvas-component/>
 <header>
     <livewire:landing-page.header-top-component/>

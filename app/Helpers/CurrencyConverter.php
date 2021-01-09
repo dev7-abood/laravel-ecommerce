@@ -44,7 +44,7 @@ class CurrencyConverter
     public function defaultCurrency(): array
     {
         return [
-            'value' => (float)1.00,
+            'value' => (float) 1.00,
             'currency_icon' => '$',
             'currency_type' => 'USD'
         ];

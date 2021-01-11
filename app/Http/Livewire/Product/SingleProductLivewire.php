@@ -9,6 +9,7 @@ use Livewire\WithPagination;
 use App\Models\Card;
 use App\Models\ProductRating;
 
+use App\Helpers\CurrencyConverter;
 
 class SingleProductLivewire extends Component
 {
@@ -23,14 +24,22 @@ class SingleProductLivewire extends Component
     public $productProperty;
     public $quantity;
     public $rating;
+    public $currency;
 
     public function mount()
     {
+        $converter = new CurrencyConverter();
+        $this->currency = $converter->currency;
         $this->product = Product::with(['images'])->where('slug', $this->slug)->first();
         $rating = ProductRating::where('product_id', $this->product->id)->selectRaw('SUM(rating)/COUNT(user_id) AS avg_rating')->first()->avg_rating;
         $this->rating = (int)round($rating, 1);
         $this->quantity = 1;
 
+    }
+
+    public function calculateCurrency($price)
+    {
+        return round((int)$this->currency['value'] * (int)$price, 2);
     }
 
     public function render()
@@ -153,5 +162,48 @@ class SingleProductLivewire extends Component
                     ]);
             }
         }
+    }
+
+    public function moreInfo()
+    {
+        $this->dispatchBrowserEvent('swal',
+            [
+
+                'title' => $this->product->name,
+                'html' => <<< EOT
+                <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                            <th style="font-size: 14px">Main price</th>
+                            <th style="font-size: 14px">Discount percent</th>
+                            <th style="font-size: 14px">Discount price</th>
+                            <th style="font-size: 14px">Tax value percent</th>
+                            <th style="font-size: 14px">Value added tax</th>
+                            <th style="font-size: 14px">Pay</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                             <td style="font-size: 16px">{$this->calculateCurrency($this->product->main_price)} {$this->currency['currency_icon']}</td>
+                             <td style="font-size: 16px">{$this->product->discount_percent} %</td>
+                            <td style="font-size: 16px">-{$this->calculateCurrency($this->product->discount_percent)} {$this->currency['currency_icon']}</td>
+                            <td style="font-size: 16px">{$this->product->tax_val_percent} %</td>
+                            <td style="font-size: 16px">+{$this->calculateCurrency($this->product->value_added_tax)} {$this->currency['currency_icon']}</td>
+                            <td style="font-size: 16px">{$this->calculateCurrency($this->product->pay)} {$this->currency['currency_icon']}</td>
+                         </tr>
+                         </tbody>
+                        </table>
+                EOT,
+                'customClass' => 'swal-wide',
+//                'showCloseButton' => true,
+//                'showCancelButton' => true,
+//                'focusConfirm' => false,
+//                'confirmButtonText' => '<i class="fa fa-thumbs-up"></i> Great!',
+//                'confirmButtonAriaLabel' => 'Thumbs up, great!',
+//                'cancelButtonText' => '<i class="fa fa-thumbs-down"></i>',
+//                'cancelButtonAriaLabel' => 'Thumbs down'
+
+            ]
+        );
     }
 }

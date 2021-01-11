@@ -1,12 +1,9 @@
 <div
-
     class="modal fade theme1 style1"
     id="quick-view"
     tabindex="-1"
     role="dialog"
 >
-    <!-- modals start -->
-    <!-- first modal -->
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -107,10 +104,10 @@
                     <div class="col-lg-7">
                         <div class="modal-product-info">
                             <div class="product-head">
-                                <h2 class="title">
+                                <h2 id="name">
                                     New Balance Running Arishi trainers in triple
                                 </h2>
-                                <h4 class="sub-title">Reference: demo_5</h4>
+{{--                                <h4 class="sub-title">Reference: demo_5</h4>--}}
                                 <div class="star-content mb-20">
                                     <span class="star-on"><i class="fas fa-star"></i> </span>
                                     <span class="star-on"><i class="fas fa-star"></i> </span>

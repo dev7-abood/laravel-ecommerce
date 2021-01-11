@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,28 +27,20 @@ Route::group(['prefix' => 'settings' ,'as' => 'settings.', 'namespace' => 'UserS
     Route::post('set-currency', ['as' => 'set.currency', 'uses' => 'CurrencyController@setCurrency']);
 });
 
-
 Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
     Route::get('/', ['as' => 'landingPage', 'uses' => 'IndexController@index']);
-
     Route::group(['prefix' => 'product/categories', 'as' => 'categories.'], function (){
         Route::get('/{brandSlug?}', ['as' => 'index', 'uses' => 'ProductCategory@index']);
     });
-
     Route::group(['prefix' => 'products', 'as' => 'products.'], function (){
         Route::get('/{slug}', ['as' => 'show', 'uses' => 'ProductsController@show']);
     });
-
     Route::group(['prefix' => 'qr/product', 'as' => 'product.'], function (){
         Route::get('/{catSlug}/{slug}', ['as' => 'Single.index', 'uses' => 'ProductController@show']);
     });
-
 });
 
-use App\Models\Product;
-use App\Http\Resources\ListProductsResource;
 Route::get('/test', function (){
-//    return \App\Models\Product::all();
 
-    return \App\Models\Product::all();
+ return  Product::with('images')->where('is_published', true)->orderBy('updated_at', 'DESC')->get();
 });

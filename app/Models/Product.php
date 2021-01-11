@@ -18,6 +18,7 @@ class Product extends Model
 
     protected $appends =
         [
+        'category_slug',
         'user_is_favorite',
         'tax_val_percent',
         'value_added_tax',
@@ -26,7 +27,10 @@ class Product extends Model
     ];
 
     protected $hidden =  [
+        'id',
         'user_is_favorite',
+        'created_at',
+        'updated_at'
     ];
 
     protected $casts =
@@ -36,6 +40,11 @@ class Product extends Model
         'tax_val_percent'  => 'float'
         ];
 
+
+    public function getCategorySlugAttribute()
+    {
+        return ProductHelper::categorySlug($this->attributes['id']);
+    }
 
     public function getUserIsFavoriteAttribute()
     {

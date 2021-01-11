@@ -39,9 +39,14 @@ class ListProductsLivewire extends Component
         return (int) round($rating, 1);
     }
 
+    public function calculateCurrency($price)
+    {
+        return round((int) $this->currency['value'] * (int) $price, 2);
+    }
+
     public function render()
     {
-        $products = Product::where('is_published', true)->orderBy('updated_at', 'DESC');
+        $products = Product::with('images')->where('is_published', true)->orderBy('updated_at', 'DESC');
         $total = $products->count();
         return view('livewire.landing-page.list-products-livewire',
             [

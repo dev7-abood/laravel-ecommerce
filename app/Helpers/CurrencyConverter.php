@@ -30,7 +30,7 @@ class CurrencyConverter
     public function usdToIls(): array
     {
         try {
-            $USDtoILS = Http::get($this->api . 'convert?q=USD_ILS&compact=ultra&apiKey=' . env('CURRCONV_KEY'))['USD_ILS'];
+            $USDtoILS = Http::get($this->api.'convert?q=USD_ILS&compact=ultra&apiKey=' . env('CURRCONV_KEY'))['USD_ILS'];
             return [
                 'value' => $USDtoILS,
                 'currency_icon' => '₪',

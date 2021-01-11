@@ -31,24 +31,15 @@
                 <div class="single-product-head">
                     <h2 class="title mb-20">{{$product->name}}</h2>
                     <div class="star-content mb-20">
-                        {{--                            <span class="star-on"><i class="ion-ios-star"></i> </span>--}}
-                        {{--                            <span class="star-on"><i class="ion-ios-star"></i> </span>--}}
-                        {{--                            <span class="star-on"><i class="ion-ios-star"></i> </span>--}}
-                        {{--                            <span class=""><i class="ion-ios-star"></i> </span>--}}
-                        @for($i = 0; $i < $rating; $i++)
-                            <span class="star-on"><i class="ion-ios-star"></i> </span>
-                        @endfor
-
-
+                        {!! str_repeat('<span class="star-on"><i class="ion-ios-star"></i> </span>', $rating) !!}
                         <button onclick="rating()" type="button"><span class="ml-2 btn-link"><i
                                     class="fas fa-star-half-alt"></i></span>
                             Rate
                         </button>
                         <span>&nbsp;&nbsp;</span>
-                        <button type="button"><span class="edite btn-link"><i class="far fa-edit"></i></span> Write
-                            a
-                            review
-                        </button>
+                        <button type="button"><span class="edite btn-link"><i class="far fa-edit"></i></span> Write a review</button>
+                        <span>&nbsp;&nbsp;</span>
+                        <button wire:click="moreInfo" type="button"><span class="btn-link"><i class="fas fa-info-circle"></i></span>&nbsp;&nbsp;More info</button>
                     </div>
                 </div>
                 <div class="product-body mb-40">
@@ -56,10 +47,10 @@
                <span class="product-price mr-20">
                  @if($product->discount_percent != 0)
                        <del
-                           class="del">{{$product->currency_info['currency_icon']}} {{$product->vat_after_discount}}</del>
+                           class="del">{{$currency['currency_icon']}} {{$this->calculateCurrency($product->vat_after_discount)}}</del>
                    @endif
                    <span class="onsale"
-                         style="font-size: 18px">{{$product->currency_info['currency_icon']}} {{$product->pay}}</span>
+                         style="font-size: 18px">{{$currency['currency_icon']}} {{$this->calculateCurrency($product->pay)}}</span>
                      <br/>
                  @if($product->discount_percent != 0)
                       </span>
@@ -278,5 +269,11 @@
     @section('style')
         <link rel="stylesheet" href="/main/assets/css/rating.css"/>
         <meta name="turbolinks-visit-control" content="reload">
+        <style>
+            .swal-wide{
+                width:850px !important;
+            }
+
+        </style>
     @endsection
 </div>

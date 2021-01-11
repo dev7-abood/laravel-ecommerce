@@ -3,9 +3,9 @@
 <x-landing-page.head-component/>
 <body>
 @if(Request::is('/'))
-<div id="load_screen"><div class="loader"><div class="loader-content">
-            <div class="spinner-grow align-self-center"></div></div></div></div>
-<div class="offcanvas-overlay"></div>
+{{--<div id="load_screen"><div class="loader"><div class="loader-content">--}}
+{{--            <div class="spinner-grow align-self-center"></div></div></div></div>--}}
+{{--<div class="offcanvas-overlay"></div>--}}
 @endif
 <livewire:landing-page.off-canvas-component/>
 <header>
@@ -24,6 +24,14 @@
 <livewire:landing-page.models-middle-component/>
 <x-landing-page.script-component/>
 @livewireScripts
+<script>
+    window.addEventListener('load', _ => {
+        document.getElementById('brand-slider').style.visibility = 'visible'
+    })
+    window.addEventListener('turbolinks:load', _ => {
+        document.getElementById('brand-slider').style.visibility = 'visible'
+    })
+</script>
 <script src="/js/app.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false"></script>
 <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>

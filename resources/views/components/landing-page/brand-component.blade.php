@@ -1,4 +1,4 @@
-<div class="brand-slider-section theme1 bg-white">
+<div class="brand-slider-section theme1 bg-white" id="brand-slider" style="visibility: hidden">
     <div class="container">
         <div class="row">
             <div class="col-12">

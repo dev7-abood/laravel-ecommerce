@@ -22,6 +22,16 @@ class ProductHelper{
         }
     }
 
+
+    public static function categorySlug($product_id)
+    {
+        try {
+            return DB::table('product_categories')->find($product_id)->slug;
+        }catch (\ErrorException $errorException) {
+            return null;
+        }
+    }
+
     public static function getTaxVal($table_name ,$tax_id)
     {
         try {

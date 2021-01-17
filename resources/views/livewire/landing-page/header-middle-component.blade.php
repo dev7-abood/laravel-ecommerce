@@ -81,7 +81,7 @@
 {{--                            </li>--}}
 {{--                        </ul>--}}
 {{--                    </li>--}}
-                    <li><a href="contact.html">contact Us</a></li>
+                    <li><a href="{{route('main.contactUs.index')}}">contact Us</a></li>
                     <li><a href="{{route('main.categories.index')}}">Categories</a></li>
                 </ul>
             </div>

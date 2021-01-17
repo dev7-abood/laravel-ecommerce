@@ -8,62 +8,54 @@
                         <div class="card product-card">
                             <div class="card-body">
                                 <div class="product-thumbnail position-relative">
-{{--                                    <span class="badge badge-danger top-right">New</span>--}}
+                                    @if($product->discount_percent != 0)
+                                        <span
+                                            class="badge badge-success top-right">Save {{$product->discount_percent}}%</span>
+                                    @endif
                                     <a href="{{route('main.product.Single.index', ['catSlug' => $product->category_slug, 'slug' => $product->slug])}}">
                                         <img class="first-img" src="{{$product->image}}" alt="thumbnail">
                                     </a>
-                                    <!-- product links -->
-                                    <ul class="actions d-flex justify-content-center">
-                                        <li>
-                                            <a class="action" href="wishlist.html">
-                        <span data-toggle="tooltip" data-placement="bottom" title="" class="icon-heart"
-                              data-original-title="add to wishlist">
-                        </span>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a class="action" target="_blank" href="{{route('main.product.Single.index', ['catSlug' => $product->category_slug, 'slug' => $product->slug])}}">
-                                                <span data-toggle="tooltip" data-placement="bottom" title=""
-                                                      class="icon-magnifier" data-original-title="Show"></span>
-                                            </a>
-                                        </li>
-
-
-                                    </ul>
-                                    <!-- product links end-->
                                 </div>
                                 <div class="product-desc py-0 px-0">
                                     <h3 class="title">
                                         <a href="{{route('main.product.Single.index', ['catSlug' => $product->category_slug, 'slug' => $product->slug])}}">{{$product->name}}</a>
                                     </h3>
                                     <div class="star-rating">
-
                                         {!! str_repeat('<span class="star-on"><i class="ion-ios-star"></i> </span>', (int) $rating_val ) !!}
                                         @if($this->productRating($product->id) != 0)
-                                            {!! str_repeat('<span class="text-dark"><i class="ion-ios-star"></i> </span>',  (5 -  (int) $rating_val )) !!}
+                                        {!! str_repeat('<span class="text-dark"><i class="ion-ios-star"></i> </span>',  (5 -  (int) $rating_val )) !!}
                                         @endif
                                     </div>
                                     <div class="d-flex align-items-center justify-content-between">
-
-
-                                        <div class="d-flex align-items-center mb-30">
-               <span class="product-price mr-20">
+                                        <div class="d-flex align-items-center">
+               <span class="product-price mr-25 mb-4">
                  @if($product->discount_percent != 0)
                        <del
                            class="del">{{$currency['currency_icon']}} {{$this->calculateCurrency($product->vat_after_discount)}}</del>
                    @endif
+
+
                    <span class="onsale"
                          style="font-size: 18px">{{$currency['currency_icon']}} {{$this->calculateCurrency($product->pay)}}</span>
-                     <br/>
-                 @if($product->discount_percent != 0)
-                      </span>
-                                            <span class="badge position-static bg-success rounded-0">Save {{$product->discount_percent}}%</span>
+               </span>
                                         </div>
-                                        @endif
-                                        <button class="pro-btn" data-toggle="modal" data-target="#add-to-cart">
-                                            <i class="icon-basket"></i>
-                                        </button>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <div class="d-flex">
+                                            <button class="pro-btn mx-1"
+                                                    wire:click="addToFavorite('{{$product->uuid}}')">
+                                                <i class="icon-heart"></i>
+                                            </button>
+                                            <button class="pro-btn mx-1"
+                                                    wire:click="addToCard('{{$product->uuid}}')"
+                                            >
+                                                <i class="icon-basket"></i>
+                                            </button>
+                                            {{--                                        <button class="pro-btn mx-1" data-toggle="modal" data-target="#add-to-cart">--}}
+                                            {{--                                            <i class="icon-magnifier"></i>--}}
+                                            {{--                                        </button>--}}
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/main/assets/css/plugins/plugins.css"/>
     <link rel="stylesheet" href="/main/assets/css/plugins/aos.css"/>
     <link rel="stylesheet" href="/main/assets/css/style.min.css"/>
+    <link rel="stylesheet" href="/main/assets/css/main-chat.css"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />

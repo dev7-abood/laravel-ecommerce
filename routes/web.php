@@ -38,9 +38,17 @@ Route::group(['as' => 'main.', 'namespace' => 'Main'], function (){
     Route::group(['prefix' => 'qr/product', 'as' => 'product.'], function (){
         Route::get('/{catSlug}/{slug}', ['as' => 'Single.index', 'uses' => 'ProductController@show']);
     });
+
+    Route::group(['prefix' => 'contact-us', 'as' => 'contactUs.'], function (){
+        Route::get('/', ['as' => 'index', 'uses' => 'ContactUsController@index']);
+    });
+
 });
 
 Route::get('/test', function (){
 
- return  Product::with('images')->where('is_published', true)->orderBy('updated_at', 'DESC')->get();
+    dispatch(new \App\Jobs\ContactUsJob());
+// return  Product::with('images')->where('is_published', true)->orderBy('updated_at', 'DESC')->get();
 });
+
+Route::view('/test','app');

@@ -1,40 +1,21 @@
-require('./bootstrap');
+/*
+|----------------------------------------------------------------
+| Vue 3
+|----------------------------------------------------------------
+*/
 
-// require('moment');
-
-import Swal from 'sweetalert2'
-
-window.addEventListener('swal',function(e){
-    Swal.fire(e.detail);
-});
-window.Swal = Swal;
-
+import { createApp, h } from 'vue'
+import { App, plugin } from '@inertiajs/inertia-vue3'
 let Turbolinks = require("turbolinks")
+
+
+const el = document.getElementById('app')
+
+createApp({
+    render: () => h(App, {
+        initialPage: JSON.parse(el.dataset.page),
+        resolveComponent: name => require(`./Pages/${name}`).default,
+    })
+}).use(plugin).mount(el)
+
 Turbolinks.start()
-
-// document.addEventListener("livewire:load", function(event) {
-//     turbolinks.start();
-// });
-
-// import Vue from 'vue';
-//
-// import { InertiaApp } from '@inertiajs/inertia-vue';
-// import { InertiaForm } from 'laravel-jetstream';
-// import PortalVue from 'portal-vue';
-//
-// Vue.mixin({ methods: { route } });
-// Vue.use(InertiaApp);
-// Vue.use(InertiaForm);
-// Vue.use(PortalVue);
-//
-// const app = document.getElementById('app');
-//
-// new Vue({
-//     render: (h) =>
-//         h(InertiaApp, {
-//             props: {
-//                 initialPage: JSON.parse(app.dataset.page),
-//                 resolveComponent: (name) => require(`./Pages/${name}`).default,
-//             },
-//         }),
-// }).$mount(app);

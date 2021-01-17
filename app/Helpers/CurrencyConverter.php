@@ -36,7 +36,7 @@ class CurrencyConverter
                 'currency_icon' => '₪',
                 'currency_type' => 'ILS'
             ];
-        } catch (\ErrorException $errorException) {
+        } catch (\Illuminate\Http\Client\ConnectionException $connectionException) {
             return $this->defaultCurrency();
         }
     }

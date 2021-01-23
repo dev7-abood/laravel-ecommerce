@@ -1,13 +1,20 @@
+import Turbolinks  from 'turbolinks'
+Turbolinks.start()
+
+import Swal from 'sweetalert2'
+window.Swal = Swal;
+window.addEventListener('swal',function(e){
+    window.Swal.fire(e.detail);
+});
 /*
 |----------------------------------------------------------------
 | Vue 3
 |----------------------------------------------------------------
 */
 
+/*
 import { createApp, h } from 'vue'
 import { App, plugin } from '@inertiajs/inertia-vue3'
-let Turbolinks = require("turbolinks")
-
 
 const el = document.getElementById('app')
 
@@ -17,5 +24,4 @@ createApp({
         resolveComponent: name => require(`./Pages/${name}`).default,
     })
 }).use(plugin).mount(el)
-
-Turbolinks.start()
+*/

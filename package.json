@@ -22,6 +22,8 @@
         "tailwindcss": "^2.0.1"
     },
     "dependencies": {
+        "@inertiajs/inertia": "^0.8.2",
+        "@inertiajs/inertia-react": "^0.5.1",
         "@inertiajs/inertia-vue3": "^0.3.4",
         "@inertiajs/progress": "^0.2.4",
         "sweetalert2": "^10.13.0",
